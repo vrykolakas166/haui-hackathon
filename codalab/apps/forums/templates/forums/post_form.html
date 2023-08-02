@@ -1,0 +1,31 @@
+{% extends 'forums/base_forum.html' %}
+
+{% block content %}
+<div class="col-span-10 w-[99%] min-h-[100vh] flex flex-col gap-7 items-center">
+    <div class="w-full bg-[#313175] thread-no-border">
+        <form action="." method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+                <div>
+                    <input type="text" name="title" maxlength="255" class="w-full threadinput" required=""
+                        id="id_title" placeholder="Your title" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div>
+                    <textarea name="content" cols="40" rows="10" class="w-full threadinput" required=""
+                        id="id_content" placeholder="Your content"></textarea>
+                </div>
+            </div>
+            <div class="form-group flex items-center justify-center relative">
+                <div class="flex items-center justify-center gap-5">
+                    <button type="submit" class="flex items-center justify-center gap-3 rounded-lg px-4 py-2 bg-gradient-to-r from-[#478eee] to-[#9affff] font-black text-[12px]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24"><path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14L21 3m0 0l-6.5 18a.55.55 0 0 1-1 0L10 14l-7-3.5a.55.55 0 0 1 0-1L21 3"/></svg>
+                        Post
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}

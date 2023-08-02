@@ -1,0 +1,38 @@
+{% extends "new-base.html" %}
+
+{% load i18n %}
+{% load account %}
+
+{% block head_title %}{% trans "Confirm Email Address" %}{% endblock %}
+
+
+{% block content %}
+    <section class="text-white w-[1360px] mx-auto mt-32 mb-16">
+        <div style="border-radius: 26px; background-image: url('/codalab/apps/web/static/img/home/message-bg.png'); background-size: cover;"
+            class="w-full flex items-center justify-center min-h-[390px] mb-16 shadow-[0_0_20px_5px_rgba(154,255,255,0.5)]">
+            <div class="flex flex-col items-center justify-center w-[60%] text-center gap-10">
+                <div class="font-bold text-[50px]">
+                    {% trans "Confirm Email Address" %}
+                </div>
+                {% if confirmation %}
+
+                    {% user_display confirmation.email_address.user as user_display %}
+
+                    <div class="font-semibold text-[20px]">
+                        {% blocktrans with confirmation.email_address.email as email %}Please confirm that <a href="mailto:{{ email }}">{{ email }}</a> is an email address for user {{ user_display }}.{% endblocktrans %}
+                    </div>
+                    <form method="post" action="{% url 'account_confirm_email' confirmation.key %}" class="flex items-center justify-center">
+                        {% csrf_token %}
+                        <button type="submit" class="bg-green-600 py-3 px-4 rounded-3xl text-white hover:scale-105 hover:shadow-xl">{% trans 'Confirm' %}</button>
+                    </form>   
+
+                {% else %}
+                    {% url 'account_email' as email_url %}
+                    <div class="font-semibold text-[20px]">
+                        {% blocktrans %}This email confirmation link expired or is invalid. Please <a class="text-blue-600" href="{{ email_url }}">issue a new email confirmation request</a>.{% endblocktrans %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

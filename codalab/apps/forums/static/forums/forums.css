@@ -1,0 +1,87 @@
+/* new */
+.baritems{
+    position: relative;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding-left: 40px;
+    height: 48px;
+}
+
+.baritems:hover{
+    background-color: #111160;
+    cursor: pointer;
+}
+
+.baritems:hover div{
+    color: #95f0ff;
+}
+
+.baritems:hover div svg path{
+    fill: #95f0ff;
+}
+
+.baritems::after{
+    content: "";
+    height: 100%;
+    width: 8px;
+    background-color: #95f0ff;
+    position: absolute;
+    left: 0;
+    visibility: hidden;
+}
+
+.baritems:hover::after{
+    visibility: visible;
+}
+
+.thread{
+    border-radius: 5px;
+    padding: 24px 30px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15),
+                inset 0px 0px 0px 1px #eaeaea ;
+}
+
+.thread-nohover{
+    border-radius: 5px;
+    padding: 24px 30px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15),
+                inset 0px 0px 0px 1px #eaeaea ;
+}
+
+.threadinput{
+    font-weight: lighter;
+    background-color: transparent;
+    border-radius: 5px;
+    color: #e8e7e7;
+    font-size: 12px;
+    padding: 9px 10px;
+    outline: none;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15),
+                inset 0px 0px 0px 1px #eaeaea ;
+}
+
+.border-light{
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.15),
+                inset 0px 0px 0px 1px #eaeaea ;
+}
+
+.threadinput:focus{
+    background-color: #111160;
+}
+
+.thread-no-border{
+    border-radius: 5px;
+    padding: 24px 30px;
+}
+
+.thread:hover{
+    background-color: #111160;
+}
+
+.rightbar{
+    border-radius: 5px;
+    padding: 30px 50px;
+    box-shadow: 0px 0px 5px 1px white,
+                inset 0px 0px 0px 1px #eaeaea ;
+}

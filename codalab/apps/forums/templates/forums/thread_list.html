@@ -1,0 +1,85 @@
+{% extends "forums/base_forum.html" %}
+
+{% block content %}
+    {% if forum.threads.all %}
+        <div class="col-span-10 w-[99%] min-h-[100vh] flex flex-col gap-7 items-center">
+            {% for thread in thread_list_sorted %}
+                <div
+                    class="w-full bg-[#313175] thread flex flex-col gap-7"
+                >
+                    <div class="flex items-center justify-between">
+                        <div class="flex gap-4 items-center">
+                            <img src="https://picsum.photos/id/30/800/800" alt="" class="w-[40px] rounded-full" />
+                            <div>
+                                <div class="text-[13px]">{{ thread.started_by }}</div>
+                                <div class="text-[10px] text-[#808080]">
+                                    {{ thread.last_post_date|timesince }}
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            {% if forum.competition.creator == request.user or request.user in forum.competition.admins.all %}
+                                <div class="flex gap-2">
+                                    <a href="{% url "forum_thread_pin" thread_pk=thread.pk %}">
+                                        {% if thread.pinned_date %}
+                                            <svg class="pin-button hover:cursor-pointer" data-thread-pk="{{ thread.pk }}" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path data-thread-pk="{{ thread.pk }}" fill="darkred" d="M18 3v2h-1v6l2 3v2h-6v7h-2v-7H5v-2l2-3V5H6V3h12Z"/></svg>
+                                        {% else %}
+                                            <svg class="pin-button hover:cursor-pointer" data-thread-pk="{{ thread.pk }}" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24"><path data-thread-pk="{{ thread.pk }}" fill="white" d="m22.313 10.175l-1.415 1.414l-.707-.707l-4.242 4.243l-.707 3.535l-1.415 1.415l-4.242-4.243l-4.95 4.95l-1.414-1.414l4.95-4.95l-4.243-4.243l1.414-1.414l3.536-.707L13.12 3.81l-.707-.707l1.414-1.414l8.486 8.485Z"/></svg>
+                                        {% endif %}
+                                    </a>
+                                    <svg class="remove-button hover:cursor-pointer" data-thread-pk="{{ thread.pk }}" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 1216 1312"><path data-thread-pk="{{ thread.pk }}" fill="darkred" d="M1202 1066q0 40-28 68l-136 136q-28 28-68 28t-68-28L608 976l-294 294q-28 28-68 28t-68-28L42 1134q-28-28-28-68t28-68l294-294L42 410q-28-28-28-68t28-68l136-136q28-28 68-28t68 28l294 294l294-294q28-28 68-28t68 28l136 136q28 28 28 68t-28 68L880 704l294 294q28 28 28 68z"/></svg>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <div class="text-[24px] font-bold">{{ thread.title }}</div>
+                        <div 
+                            onclick="window.location.href='{% url 'forum_thread_detail' forum_pk=forum.pk thread_pk=thread.pk %}'"
+                            class="text-[14px] font-light truncate underline hover:cursor-pointer"
+                        >
+                            Read
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-end">
+                        <div class="flex items-center justify-center">
+                            <div class="flex items-center gap-1">
+                                <svg class="scale-x-[-1]" xmlns="http://www.w3.org/2000/svg" width="15" height="15"
+                                    viewBox="0 0 24 24">
+                                    <path fill="#e8e7e7"
+                                        d="m22 22l-4-4H4q-.825 0-1.413-.588T2 16V4q0-.825.588-1.413T4 2h16q.825 0 1.413.588T22 4v18ZM4 16V4v12Zm14.85 0L20 17.125V4H4v12h14.85Z" />
+                                </svg>
+                                <div class="text-[13px] text-[#e8e7e7]">{{ thread.posts.count }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="col-span-10 w-full text-white text-[36px] text-center mt-10">No topics started yet, <a
+            class="text-[#95f0ff] hover:text-[#95f0ff]" href="{% url 'forum_new_thread' forum_pk=forum.pk %}">start one
+            now</a>!
+        </div>
+    {% endif %}
+
+    <script>
+        function redirect_post(url) {
+            var form = document.createElement('form');
+            document.body.appendChild(form);
+            form.method = 'post';
+            form.action = url;
+            $(form).append("{% csrf_token %}")
+            form.submit();
+        }
+
+        $(document).ready(function () {
+            $('.remove-button').click(function (event) {
+                var thread_pk = event.target.dataset.threadPk
+                if (confirm("Are you sure you want to delete this?")) {
+                    redirect_post("/forums/{{ forum.pk }}/" + thread_pk + "/delete/")
+                }
+            })
+        })
+    </script>
+{% endblock %}

@@ -1,0 +1,94 @@
+{% extends 'new-base.html' %}
+{% block head_title %}Competitions{% endblock head_title %}
+{% block page_title %}Competitions{% endblock page_title %}
+{% block content %}
+
+{% load static %}
+<section class="text-white flex flex-col items-center justify-center mb-16">
+    <img class="mt-[80px]" src="/codalab/apps/web/static/img/home/HomeHero.png" alt="#" />
+    <form id="search_form" action="." method="GET" class="w-[1200px] backdrop-blur-md translate-y-[-100px] rounded-2xl h-[120px] mx-auto bg-[rgba(255,255,255,0.25)] flex items-center relative gap-5 pl-10">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24"><path fill="#9affff" d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5A6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5S14 7.01 14 9.5S11.99 14 9.5 14z"/></svg>
+        <input id="search_query_input" type="search" name="q" type="text" class="w-[900px] bg-transparent font-bold text-[24px] text-white outline-none  placeholder:font-bold placeholder:text-[24px] placeholder:text-white" placeholder="Search Competition"/>
+        <input style="text-decoration: none; color: white;"
+            type="submit"
+            class="absolute right-8 font-semibold bg-gradient-to-r from-[#9affff] to-[#478eee] px-14 py-3 rounded-2xl hover:shadow-[0_0_20px_2px_rgba(154,255,255,0.5)]"
+            value="Search"/>
+    </form>
+    {% if not competitions %}
+        <div>
+        <p class="font-bold text-[46px] text-white"><em>There are no competitions.</em></p>
+    </div>
+    {% else %}
+        <div class="w-[90vw] grid grid-cols-4 gap-12">
+            {% for competition in competitions %}
+                <a
+                    style="text-decoration: none; color: white;"
+                    href="{% url "competitions:view" pk=competition.pk %}"
+                    onmouseenter="glowBorder(this)"
+                    onmouseleave="glowBorderOff(this)"
+                    class="hover:cursor-pointer min-h-[350px] min-w-[380px] flex flex-col items-center justify-center gap-4 text-center bg-[rgba(154,255,255,0.25)] rounded-xl"
+                >
+                    <input id="competitionID" type="hidden" value="{{ competition.id }}"/>
+                    {% if competition.image_url == None %}
+                        <img src="{% static 'img/ProfileImageDummy.jpg' %}" alt="#" class="w-[120px]">
+                    {% else %}
+                        <img src="{{ competition.image_url }}" alt="#" class="w-[120px]">
+                    {% endif %}
+                    <div>
+                        <p class="font-extrabold text-[32px] text-white">{{ competition.title }}</p>
+                        <p class="text-[16px] text-white">Organized by {{ competition.creator }}</p>
+                    </div>
+                    <div class="font-semibold text-[24px] text-white">
+                        <p>
+                            <!-- {{ competition.get_start_date|date:"M d, Y" }}-{% if competition.end_date %}{{ competition.end_date|date:"M d, Y" }}{% else %}No end date{% endif %} -->
+                        </p>
+                        {% if competition.num_participants %}
+                            <p>{{ competition.num_participants }} participant{% if competition.num_participants > 1 %}s{% endif %}</p>
+                        {% else %}
+                            <p>{{ competition.get_participant_count }} participant{% if competition.get_participant_count > 1 %}s{% endif %}</p>
+                        {% endif %}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    {% endif %}
+    <div>
+        <a href="https://github.com/codalab/codalab/wiki/User_Competition-Roadmap">Learn how to create your own competition.</a>
+    </div>
+</section>
+
+{% endblock content%}
+
+{% block js %}
+    function populate(frm, data) {
+        $.each(data, function(key, value){
+            var $ctrl = $('[name='+key+']', frm);
+            switch($ctrl.attr("type"))
+            {
+                case "text":
+                case "hidden":
+                    $ctrl.val(value);
+                    break;
+                case "radio":
+                case "checkbox":
+                    $ctrl.each(function(){
+                        if(value=='on') {
+                            $(this).attr("checked",value);
+                        }
+                    });
+                    break;
+                default:
+                    $ctrl.val(value);
+            }
+        });
+    }
+    $('.competition-tile').on('click',function(){
+        var competitionID = $(this).find('#competitionID').val();
+        window.location.href = '/competitions/' + competitionID;
+    });
+
+    var params = {}
+    location.search.substr(1).split("&").forEach(function(item) {params[item.split("=")[0]] = item.split("=")[1]})
+
+    populate('#search_form', params);
+{% endblock js %}
