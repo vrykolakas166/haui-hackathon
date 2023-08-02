@@ -68,15 +68,9 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                {% block title %}
-                    <a class="navbar-brand" href="/" tabIndex=1 target="_self">
-                        {% if CUSTOM_HEADER_LOGO %}
-                            <img src="{{ CUSTOM_HEADER_LOGO }}" alt="Home">
-                        {% else %}
-                            <img src="{% static "img/codalab-logo-fullcolor-positive.png" %}" alt="Home">
-                        {% endif %}
-                    </a>
-                {% endblock title %}
+                <a class="navbar-brand" style="display: flex; align-items: center; justify-content: center; color: black; font-weight: bold;" href="/" tabIndex=1 target="_self">
+                    HaUI Hackathon
+                </a>
             </div>
             {% block top_bar_right_menus %}
                 <div class="collapse navbar-collapse" id="navbar_collapse">
