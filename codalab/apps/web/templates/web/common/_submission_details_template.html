@@ -19,8 +19,8 @@
                         </div>
                         {# _'s are replaced by the submission ID in hrefs... so I'll use that to hook the traceback in #}
                         <div class="traceback"><a href="traceback/_/"></a></div>
-                        <div class="row">
-                            <div class="col-sm-6">
+                        <div class="grid grid-cols-4">
+                            <div class="col-span-2">
                                 <ul class="list-unstyled">
                                     <li><a href="/my/competition/submission/_/input.zip">Download your submission</a></li>
                                     {% if is_admin_or_owner or is_viewing_own_submissions or not phase.is_blind %}
@@ -43,8 +43,8 @@
                                     {% endif %}
                                 </ul>
                             </div>
-                            <div class="col-sm-3 preloader-handler"></div>
-                            <div class="col-sm-3">
+                            <div class="preloader-handler"></div>
+                            <div>
                                 <button class="leaderboard_button btn btn-default pull-right hide"></button><br>
                                 {% if phase.competition.allow_public_submissions %}
                                 <button class="public_link btn btn-danger pull-right">Make your submission public</button>

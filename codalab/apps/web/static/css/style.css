@@ -255,7 +255,7 @@ button.btn{
 }
 
 button.btn:hover{
-  scale: 90%;
+  scale: 95%;
 }
 
 button.selected{
@@ -306,7 +306,7 @@ button.btn-danger{
   background-color: #c9302c;
 }
 
-button.phase-btn-default{
+button.btn-default{
   color: #333;
   background-color: #fff;
   border-color: #ccc;
