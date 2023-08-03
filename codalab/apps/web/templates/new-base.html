@@ -84,7 +84,7 @@
                 <a href="/" class="text-[24px] font-bold relative navlinks">
                     Home
                 </a>
-                {% if featured_competitions %}
+                {% if latest_competitions %}
                     <a href="/competitions/1" class="text-[24px] font-bold relative navlinks">
                         Challenges
                     </a>
@@ -115,28 +115,33 @@
                         <svg id="triangle-up" class="hidden" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><path fill="white" d="M11.32 2.785c-.568-1.047-2.071-1.047-2.638 0l-6.5 12a1.5 1.5 0 0 0 1.32 2.213H16.5a1.5 1.5 0 0 0 1.319-2.214l-6.5-11.999Z"/></svg>
                         <svg id="triangle-down" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 48 48"><path fill="white" d="M27.528 40.772c-1.617 2.99-5.915 2.966-7.499-.041L4.495 11.229C3.005 8.4 5.057 5 8.255 5h31.488c3.22 0 5.27 3.44 3.739 6.272l-15.954 29.5Z"/></svg>
                     </div>
-                        <ul id="user-options" class="absolute top-10 right-0 bg-[#313175] min-w-[130px] text-center hidden">
+                        <ul id="user-options" class="absolute top-10 right-0 bg-[#313175] min-w-[130px] text-center hidden whitespace-nowrap">
                             {% if user.is_superuser %}
                                 <a href="{% url 'admin_monitoring_links' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff]">Admin Monitoring Links
+                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Admin Monitoring Links
                                     </li>
                                 </a>
                                 <a href="{% url 'admin_competitions_manager' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff]">Admin Competitions Manager
+                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Admin Competitions Manager
                                     </li>
                                 </a>
                                 <a href="{% url 'customize_codalab' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff]">Customize Hackathon
+                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Customize Hackathon
+                                    </li>
+                                </a>
+                                <a href="/my/">
+                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Competitions manager
                                     </li>
                                 </a>
                                 <a href="{% url 'su-login' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff]">Switch User
+                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Switch User
                                     </li>
                                 </a>
+                                <hr/>
                             {% endif %}
-                            <a style="text-decoration: none; color:white" href="{% url 'user_settings' %}"><li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff]">Settings</li></a>
-                            <a style="text-decoration: none; color:white" href="/accounts/password/reset/" target="_self"><li class="py-1 hover:bg-[#111160] hover:text-[#95f0ff]">Change Password</li></a>
-                            <a style="text-decoration: none; color:white" href="{% url 'account_logout' %}" target="_self"><li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff]">Sign Out</li></a>
+                            <a style="text-decoration: none; color:white" href="{% url 'user_settings' %}"><li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Settings</li></a>
+                            <a style="text-decoration: none; color:white" href="/accounts/password/reset/" target="_self"><li class="py-1 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Change Password</li></a>
+                            <a style="text-decoration: none; color:white" href="{% url 'account_logout' %}" target="_self"><li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Sign Out</li></a>
                         </ul>
                     </div>
                 </div>

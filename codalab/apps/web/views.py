@@ -550,6 +550,8 @@ class CompetitionDetailView(DetailView):
 
     def get(self, request, *args, **kwargs):
         competition = self.get_object()
+        if not competition:
+            return ("/")
         secret_key = request.GET.get("secret_key", None)
         if competition.creator != request.user and request.user not in competition.admins.all():
             # user may not be logged in, so grab PK if we can, to check if they are a participant
