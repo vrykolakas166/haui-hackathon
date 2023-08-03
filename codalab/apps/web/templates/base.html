@@ -100,9 +100,6 @@
                           <a href="{% url 'account_login' %}?next={{request.path}}" target="_self">My Competitions</a>
                           {% endif %}
                           </li>
-                        <li>
-                            <a href="https://github.com/codalab/codalab-competitions/wiki" target="_blank">Help</a>
-                        </li>
                         {% if user.is_authenticated %}
                             <li class="dropdown {% active request '/accounts/' %}">
                                 <a href="{% url 'user_settings' %}">

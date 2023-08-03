@@ -234,6 +234,11 @@ def my_index(request):
 
         - User needs to be authenticated.
     """
+
+    #admin permission
+    if not request.user.is_staff:
+        return redirect('/')
+    
     try:
         denied = models.ParticipantStatus.objects.get(codename=models.ParticipantStatus.DENIED)
     except:
