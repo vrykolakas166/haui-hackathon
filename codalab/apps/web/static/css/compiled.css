@@ -2833,6 +2833,10 @@ video {
   .max-\[1000px\]\:hidden {
     display: none;
   }
+
+  .max-\[1000px\]\:justify-center {
+    justify-content: center;
+  }
 }
 @media (max-width: 600px) {
 
