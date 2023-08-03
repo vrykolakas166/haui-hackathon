@@ -84,8 +84,8 @@
                 <a href="/" class="text-[24px] font-bold relative navlinks">
                     Home
                 </a>
-                {% if the_competitions %}
-                    <a href="{% url "competitions:view" pk=the_competitions.1.pk %}" class="text-[24px] font-bold relative navlinks">
+                {% if latest_competitions %}
+                    <a href="{% url "competitions:view" pk=latest_competitions.1.pk %}" class="text-[24px] font-bold relative navlinks">
                         Challenges
                     </a>
                 {% else %}
