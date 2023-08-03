@@ -6,45 +6,44 @@
 {% block head_title %}Sign Up{% endblock head_title %}
 
 {% block content %}
-<div>
-  <div class="relative mx-auto flex h-[60vh] w-[90vw] flex-row rounded-3xl bg-white items-center mb-16">
-    <!-- Sign in -->
-    <div id="screenSignIn" class="flex w-[45vw] flex-col items-center gap-2 transition duration-700">
-      <div class="text-[60px] font-black w-[440px] h-[100px] text-center text-[#3c3b3b]">Sign In</div>
-      <form class="w-[80%]" method="POST" action="{% url 'account_login' %}">
-        {% csrf_token %}
-        <div>
-          <div class="text-[24px] font-bold ml-3">Username</div>
-          <input id="id_login" name="login" type="text"
-            class="w-full rounded-lg border border-[#207198] px-4 py-3 text-sm outline-none"
-            placeholder="Enter username or email" />
-        </div>
-        <div>
-          <div class="text-[24px] font-bold ml-3">Password</div>
-          <input id="id_password" name="password" type="password"
-            class="w-full rounded-lg border border-[#207198] px-4 py-3 text-sm outline-none"
-            placeholder="Enter password" />
+<div class="relative mx-auto flex h-[70vh] w-[90vw] flex-row rounded-3xl bg-white items-center mb-16 py-10">
+  <!-- Sign in -->
+  <div id="screenSignIn" class="flex w-[45vw] flex-col items-center gap-2 transition duration-700">
+    <div class="text-[60px] font-black w-[440px] h-[100px] text-center text-[#3c3b3b]">Sign In</div>
+    <form class="w-[80%]" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+      <div>
+        <div class="text-[24px] font-bold ml-3">Username</div>
+        <input id="id_login" name="login" type="text"
+          class="w-full rounded-lg border border-[#207198] px-4 py-3 text-sm outline-none"
+          placeholder="Enter username or email" />
+      </div>
+      <div>
+        <div class="text-[24px] font-bold ml-3">Password</div>
+        <input id="id_password" name="password" type="password"
+          class="w-full rounded-lg border border-[#207198] px-4 py-3 text-sm outline-none"
+          placeholder="Enter password" />
+      </div>
+      <div class="flex items-center justify-between gap-2">
+        <div class="flex items-center gap-2">
+          <input id="id_remember" name="remember" type="checkbox" class="mt-0.5" />
+          <p class="text-[20px] text-[#7b7b7b] mt-1">Remember me</p>
         </div>
         <div class="flex items-center justify-between gap-2">
-          <div class="flex items-center gap-2">
-            <input id="id_remember" name="remember" type="checkbox" class="mt-0.5" />
-            <p class="text-[20px] text-[#7b7b7b] mt-1">Remember me</p>
-          </div>
-          <div class="flex items-center justify-between gap-2">
-            <p class="text-[20px] text-black mt-1 hover:cursor-pointer hover:underline">Forgot password?</p>
-            <button type="reset" class="text-[20px] text-[#11adad] mt-1 outline-none">Reset</button>
-          </div>
+          <p class="text-[20px] text-black mt-1 hover:cursor-pointer hover:underline">Forgot password?</p>
+          <button type="reset" class="text-[20px] text-[#11adad] mt-1 outline-none">Reset</button>
         </div>
-        <div>
-          {% if redirect_field_value %}
+      </div>
+      <div>
+        {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
+        {% endif %}
           <button type="submit"
             class="w-full mt-3 bg-gradient-to-bl from-[#87f7ff] to-[#4658b1] p-3 rounded-lg text-white font-bold text-[24px]">
             {% trans "Sign In" %}
           </button>
-      </form>
-    </div>
+      </div>
+    </form>
   </div>
   <!-- Sign up -->
   <div id="screenSignUp" class="flex w-[45vw] flex-col items-center gap-2 transition duration-700">
@@ -112,7 +111,7 @@
     </form>
   </div>
   <div id="overlay"
-    class="absolute left-0 top-0 h-[60vh] w-[45vw] rounded-3xl bg-[#313175] transition duration-700 translate-x-[-1%]">
+    class="absolute left-0 top-0 h-full w-[45vw] rounded-3xl bg-[#313175] transition duration-700 translate-x-[-1%]">
   </div>
 </div>
 {% endblock %}
