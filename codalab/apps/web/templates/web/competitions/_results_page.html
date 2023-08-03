@@ -15,7 +15,7 @@
     {% if phase.is_blind and is_owner or phase.is_blind and request.user in competition_admins %}
         <p>Competition organizers have chosen to keep the leaderboard private but as an organizer, you can access this page.</p>
     {% endif %}
-    <div class="phase-description">
+    <div class="phase-description no-tailwind-heading">
         <h4>Phase description</h4>
         {% if phase.description %}
             <p>{{ phase.description }}</p>
