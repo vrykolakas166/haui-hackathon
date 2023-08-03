@@ -250,11 +250,11 @@ table li a:hover{
   display: block !important;
 }
 
-button.btn{
+a.btn, button.btn{
   padding: 6px;
 }
 
-button.btn:hover{
+a.btn:hover, button.btn:hover{
   scale: 95%;
 }
 
@@ -298,18 +298,18 @@ div.button:hover{
   background-color: #4f4f4f;
 }
 
-button.btn-primary{
+a.btn-primary, button.btn-primary{
   background-color: #4f4b5c;
 }
 
-button.btn-danger{
+a.btn-danger, button.btn-danger{
   background-color: #c9302c;
 }
 
-button.btn-default{
-  color: #333;
-  background-color: #fff;
-  border-color: #ccc;
+a.btn-default, button.btn-default{
+  color: #262626;
+  background-color: #e4e4e4;
+  border-color: #797f98;
 }
 
 .s3direct{
