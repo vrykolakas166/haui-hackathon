@@ -550,15 +550,14 @@ class CompetitionDetailView(DetailView):
 
     def get(self, request, *args, **kwargs):
         competition = self.get_object()
-        if not competition:
-            return ("/")
         secret_key = request.GET.get("secret_key", None)
         if competition.creator != request.user and request.user not in competition.admins.all():
             # user may not be logged in, so grab PK if we can, to check if they are a participant
             user_pk = request.user.pk or -1
             if not competition.participants.filter(user=user_pk).exists():
                 if not competition.published and str(competition.secret_key) != secret_key:
-                    return HttpResponse(status=404)
+                    # return HttpResponse(status=404)
+                    return render(request, 'templates/notexisted.html')
         # FIXME: handles legacy problem with missing post_save signal for forums, creates forum if it
         # does not exist for this competition. should be removed eventually.
         if not hasattr(competition, 'forum'):
