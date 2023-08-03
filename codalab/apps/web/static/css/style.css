@@ -339,3 +339,10 @@ a.btn-default, button.btn-default{
 .bg-\[\#3c3c5e\] {
   background-color: #3c3c5e;
 }
+
+/* custom input in table */
+td input{
+  padding: 5px 8px;
+  border-radius: 8px;
+  color: black;
+}
