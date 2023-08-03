@@ -317,7 +317,7 @@ class CompetitionS3Upload(LoginRequiredMixin, CompetitionCreationMixin, FormView
     def form_valid(self, form):
         competition_def_bundle = form.save(commit=False)
 
-        if self.request.user.is_superuser or self.request.user.is_staff or not settings.SINGLE_COMPETITION_VIEW_PK:
+        if self.request.user.is_superuser or self.request.user.is_staff: # or not settings.SINGLE_COMPETITION_VIEW_PK:
             competition_def_bundle.owner = self.request.user
             competition_def_bundle.save()
             job = Job.objects.create_job('create_competition', {'comp_def_id': competition_def_bundle.pk})
