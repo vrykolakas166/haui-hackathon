@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content %}
-<form method="POST" action="." class="lg:mx-20 md:mx-12 no-tailwind-heading p-5 bg-[#313175] rounded-lg text-white">{% csrf_token %}
+<form method="POST" action="." class="lg:mx-20 md:mx-12 no-tailwind-heading p-5 bg-[#313175] rounded-lg text-white mb-16 shadow-2xl">{% csrf_token %}
     <h2>{{ user.username }}</h2>
     {% if errors %}
         <div class="text-red-700 text-[20px] font-semibold">
@@ -33,7 +33,7 @@
         </div>
     {% endif %}
 
-    <h3><b>Basic settings {% if user.is_staff %}<span class="px-3 py-1 phase-btn-green">Staff</span>{% endif %}{% if user.is_superuser %} <span class="px-3 py-1 phase-btn-deadline">Admin</span>{% endif %}</b></h3>
+    <h3><b>Basic settings {% if user.is_staff %}<span class="px-3 py-1 phase-btn-green rounded-lg">Staff</span>{% endif %}{% if user.is_superuser %} <span class="px-3 py-1 phase-btn-deadline rounded-lg">Admin</span>{% endif %}</b></h3>
 
     <div class="row">
         <div class="col-sm-12">
@@ -119,7 +119,7 @@
         </div>
     </div>
 
-    <input type="submit" class="font-semibold bg-gradient-to-r from-[#9affff] to-[#478eee] px-14 py-3 rounded-2xl hover:shadow-[0_0_20px_2px_rgba(154,255,255,0.5)]" value="Save Changes">
+    <input type="submit" class="my-2 hover:cursor-pointer hover:scale-95 font-semibold bg-gradient-to-r from-[#9affff] to-[#478eee] px-14 py-3 rounded-2xl hover:shadow-[0_0_20px_2px_rgba(154,255,255,0.5)]" value="Save Changes">
 </form>
 {% endblock %}
 
