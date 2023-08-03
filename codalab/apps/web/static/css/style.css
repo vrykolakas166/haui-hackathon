@@ -260,7 +260,6 @@ button.btn:hover{
 
 button.selected{
   box-shadow: inset 0px 0px 7px 1px #e0e0e0;
-  border: 2px solid #cbcbcb;
 }
 
 div.form-group{
