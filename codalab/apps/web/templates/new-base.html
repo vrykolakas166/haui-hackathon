@@ -84,24 +84,18 @@
                 <a href="/" class="text-[24px] font-bold relative navlinks">
                     Home
                 </a>
-                {% if latest_competitions %}
-                    <a href="/competitions/1" class="text-[24px] font-bold relative navlinks">
-                        Challenges
-                    </a>
-                {% else %}
-                    <a href="/competitions/s3_create_competition" class="text-[24px] font-bold relative navlinks">
-                        Challenges
-                    </a>
-                {% endif %}
+                <a href="/challenge" class="text-[24px] font-bold relative navlinks">
+                    Challenges
+                </a>
                 <!-- <div class="text-[24px] font-bold relative navlinks">
                     Timeline
                 </div> -->
                 <!-- <a style="text-decoration: none; color:white" href="/competitions/" class="text-[24px] font-bold relative navlinks">
                     Search
                 </a> -->
-                <a href="/forums/1" class="text-[24px] font-bold relative navlinks">
+                <!-- <a href="/forums/1" class="text-[24px] font-bold relative navlinks">
                     Forum
-                </a>
+                </a> -->
             </div>
         {% endblock top_bar_right_menus %}
         <div class="relative">

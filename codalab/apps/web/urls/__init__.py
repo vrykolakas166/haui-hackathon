@@ -7,6 +7,7 @@ from .. import views
 
 urlpatterns = [
     url(r'^$', views.HomePageView.as_view(), name='home'),
+    url(r'^challenge/', views.SingleChallengeView.as_view(), name='challenge'),
     url(r'^_ver', views.VersionView.as_view(),name='_version'),
     url(r'^my/', include('apps.web.urls.my')),
     url(r'^profile/(?P<pk>\d+)$', views.UserDetailView.as_view(), name='user_details'),

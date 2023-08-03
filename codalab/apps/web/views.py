@@ -98,22 +98,22 @@ class HomePageView(TemplateView):
     template_name = "web/index.html"
 
     def get(self, *args, **kwargs):
-        if settings.SINGLE_COMPETITION_VIEW_PK:
-            # First quickly check that competition is available to view
-            try:
-                competition = models.Competition.objects.get(pk=settings.SINGLE_COMPETITION_VIEW_PK)
-                if not competition.published:
-                    return HttpResponse(
-                        "Warning, SINGLE_COMPETITION_VIEW_PK setting is set but the competition is not published so "
-                        "regular users won't be able to access it!<br>"
-                        "If you have access, go <a href='{}'>here</a> to edit the competition.".format(
-                            reverse("competitions:edit", kwargs={"pk": competition.pk})
-                        ))
-            except ObjectDoesNotExist:
-                raise Http404()
+        # if settings.SINGLE_COMPETITION_VIEW_PK:
+        #     # First quickly check that competition is available to view
+        #     try:
+        #         competition = models.Competition.objects.get(pk=settings.SINGLE_COMPETITION_VIEW_PK)
+        #         if not competition.published:
+        #             return HttpResponse(
+        #                 "Warning, SINGLE_COMPETITION_VIEW_PK setting is set but the competition is not published so "
+        #                 "regular users won't be able to access it!<br>"
+        #                 "If you have access, go <a href='{}'>here</a> to edit the competition.".format(
+        #                     reverse("competitions:edit", kwargs={"pk": competition.pk})
+        #                 ))
+        #     except ObjectDoesNotExist:
+        #         raise Http404()
 
-            kwargs.update(pk=settings.SINGLE_COMPETITION_VIEW_PK)
-            return CompetitionDetailView.as_view()(*args, **kwargs)
+        #     kwargs.update(pk=settings.SINGLE_COMPETITION_VIEW_PK)
+        #     return CompetitionDetailView.as_view()(*args, **kwargs)
         return super(HomePageView, self).get(*args, **kwargs)
 
     def get_context_data(self, **kwargs):
@@ -134,6 +134,26 @@ class HomePageView(TemplateView):
         config, _ = Configuration.objects.get_or_create(pk=1)
         context["front_page_message"] = mark_safe(config.front_page_message)
         return context
+
+class SingleChallengeView(TemplateView):
+    def get(self, *args, **kwargs):
+        if settings.SINGLE_COMPETITION_VIEW_PK:
+            # First quickly check that competition is available to view
+            try:
+                competition = models.Competition.objects.get(pk=settings.SINGLE_COMPETITION_VIEW_PK)
+                if not competition.published:
+                    return HttpResponse(
+                        "Warning, SINGLE_COMPETITION_VIEW_PK setting is set but the competition is not published so "
+                        "regular users won't be able to access it!<br>"
+                        "If you have access, go <a href='{}'>here</a> to edit the competition.".format(
+                            reverse("competitions:edit", kwargs={"pk": competition.pk})
+                        ))
+            except ObjectDoesNotExist:
+                raise Http404()
+
+            kwargs.update(pk=settings.SINGLE_COMPETITION_VIEW_PK)
+            return CompetitionDetailView.as_view()(*args, **kwargs)
+        return ("/")
 
 class Highlights(TemplateView):
     template_name = 'web/highlights.html'
