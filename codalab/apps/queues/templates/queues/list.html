@@ -25,7 +25,7 @@
                 <tr>
                     <td>{{ queue.name }}</td>
                     <td>{{ queue.broker_url }}</td>
-                    <td>{% if queue.is_public %}<i class="glyphicon glyphicon-ok"></i>{% endif %}</td>
+                    <td>{% if queue.is_public %}<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1200"><path fill="white" d="m1004.237 99.152l-611.44 611.441l-198.305-198.305L0 706.779l198.305 198.306l195.762 195.763L588.56 906.355L1200 294.916L1004.237 99.152z"/></svg>{% endif %}</td>
                     <td>
                         <a href="{% url "queues:update" pk=queue.pk %}" class="btn btn-default">Edit</a>
                         <a href="{% url "queues:delete" pk=queue.pk %}" class="btn btn-danger">Delete</a>

@@ -86,7 +86,7 @@
         <p id="details" class="submission_upload_details"></p>
 
         <p>Here are your submissions to date
-            <span class="small">(<span class="glyphicon glyphicon-ok"></span> indicates submission on leaderboard )</span>:</p>
+            <span class="small">(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1200"><path fill="white" d="m1004.237 99.152l-611.44 611.441l-198.305-198.305L0 706.779l198.305 198.306l195.762 195.763L588.56 906.355L1200 294.916L1004.237 99.152z"/></svg> indicates submission on leaderboard )</span>:</p>
     {% else %}
         <p>This phase of the competition is closed. Here are the submissions you made:</p>
     {% endif %}
@@ -109,7 +109,7 @@
                     <th>Submission date</th>
                     <th>Size (bytes)</th>
                     <th>Status</th>
-                    <th class="text-center"><span class="glyphicon glyphicon-ok"></span></th>
+                    <th class="text-center"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1200"><path fill="white" d="m1004.237 99.152l-611.44 611.441l-198.305-198.305L0 706.779l198.305 198.306l195.762 195.763L588.56 906.355L1200 294.916L1004.237 99.152z"/></svg></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -147,8 +147,9 @@
                             <td>{{ submission_info.size }}</td>
                             <td class="statusName">{{ submission_info.status_name }}</td>
                             {% if submission_info.is_in_leaderboard %}
-                                <td class="status submitted text-center"><span
-                                        class="glyphicon glyphicon-ok text-success"></span></td>
+                                <td class="status submitted text-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1200"><path fill="green" d="m1004.237 99.152l-611.44 611.441l-198.305-198.305L0 706.779l198.305 198.306l195.762 195.763L588.56 906.355L1200 294.916L1004.237 99.152z"/></svg>
+                                </td>
                             {% else %}
                                 <td class="status not_submitted text-center"></td>
                             {% endif %}
