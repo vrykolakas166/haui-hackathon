@@ -460,7 +460,7 @@ var Competition;
 
         $.post('/competitions/update_description/' + submission_id, {'updated_description': new_description})
             .done(function() {
-                $(element).parent().find('.submission_description').html('<b>Description:</b> <br><pre>' + new_description + '</pre>');
+                $(element).parent().find('.submission_description').html('<b>Description:</b> <br><div class="p-2 my-1 bg-[#111160]">' + new_description + '</div>');
                 $(element).parent().find('textarea[name="updated_description"]').val('').hide();
                 $(element).parent().find('.update_description_btn').removeClass('hide').show();
                 $(element).hide();

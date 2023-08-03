@@ -94,8 +94,8 @@
     {% if phase.is_future %}
         <p>This phase of the competition has not started yet. Please check back later.</p>
     {% else %}
-        <p>Here are your submissions to date
-            <span class="small">(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1200"><path fill="white" d="m1004.237 99.152l-611.44 611.441l-198.305-198.305L0 706.779l198.305 198.306l195.762 195.763L588.56 906.355L1200 294.916L1004.237 99.152z"/></svg> indicates submission on leaderboard )</span>:
+        <p class="flex items-center gap-2">Here are your submissions to date
+            <span class="small flex items-center gap-2">(<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 1200 1200"><path fill="white" d="m1004.237 99.152l-611.44 611.441l-198.305-198.305L0 706.779l198.305 198.306l195.762 195.763L588.56 906.355L1200 294.916L1004.237 99.152z"/></svg> indicates submission on leaderboard )</span>:
         </p>
 
         <submission-form competition_id="{{ competition.pk }}" phase_id="{{ current_phase.pk }}"></submission-form>
