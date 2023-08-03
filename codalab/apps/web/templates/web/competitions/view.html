@@ -23,7 +23,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="w-[90vw] lg:mx-20 md:mx-12 text-white">
+<div class="w-[90vw] lg:mx-20 md:mx-12 text-white mx-auto">
     {% if request.user.is_staff %}
         <a href="{% url "competitions:download" competition_pk=competition.pk %}" class="p-2 bg-[#95f0ff]/50 rounded-md hover:bg-[#95f0ff]/80 hover:shadow-[0_0_3px_1px_rgba(154,255,255,0.5)]">DOWNLOAD COMPETITION BUNDLE!</a>
     {% endif %}
@@ -48,9 +48,9 @@
             <div class="col-span-2">
                 <div class="flex items-center justify-center">
                     {% if competition.image_url %}
-                        <img class="max-w-[165px] shadow-[0_0_10px_1px_rgba(255,255,255,0.9)] rounded-xl" src="{{ competition.image_url }}">
+                        <img class="w-[90%] shadow-[0_0_10px_1px_rgba(255,255,255,0.9)] rounded-xl" src="{{ competition.image_url }}">
                     {% else %}
-                        <img class="max-w-[165px] shadow-[0_0_10px_1px_rgba(255,255,255,0.9)] rounded-xl" src="{% static "img/ProfileImageDummy.jpg" %}">
+                        <img class="w-[90%] shadow-[0_0_10px_1px_rgba(255,255,255,0.9)] rounded-xl" src="{% static "img/ProfileImageDummy.jpg" %}">
                     {% endif %}
                 </div>
             </div>
