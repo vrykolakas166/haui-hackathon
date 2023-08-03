@@ -306,3 +306,32 @@ button.btn-primary{
 button.btn-danger{
   background-color: #c9302c;
 }
+
+button.phase-btn-default{
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+
+.s3direct{
+  float: none !important;
+}
+
+.s3direct.link-active {
+  display: flex;
+  align-items: center;
+  margin: 5px 0px;
+}
+
+.s3direct .file-remove {
+  margin-top: 0px !important;
+  margin-left: 5px !important;
+  text-transform: uppercase;
+  padding: 4px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+.s3direct .file-remove:hover {
+  background-color: #7b7b7b;
+}
