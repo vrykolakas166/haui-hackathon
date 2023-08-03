@@ -2828,6 +2828,18 @@ video {
 .hover\:focus\:text-center:focus:hover {
   text-align: center;
 }
+@media (max-width: 1000px) {
+
+  .max-\[1000px\]\:hidden {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+
+  .max-\[600px\]\:text-\[16px\] {
+    font-size: 16px;
+  }
+}
 @media (min-width: 640px) {
 
   .sm\:mx-4 {
