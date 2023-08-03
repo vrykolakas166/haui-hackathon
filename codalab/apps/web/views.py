@@ -556,8 +556,7 @@ class CompetitionDetailView(DetailView):
             user_pk = request.user.pk or -1
             if not competition.participants.filter(user=user_pk).exists():
                 if not competition.published and str(competition.secret_key) != secret_key:
-                    # return HttpResponse(status=404)
-                    return render(request, 'templates/notexisted.html')
+                    return HttpResponse(status=404)
         # FIXME: handles legacy problem with missing post_save signal for forums, creates forum if it
         # does not exist for this competition. should be removed eventually.
         if not hasattr(competition, 'forum'):

@@ -191,6 +191,7 @@ class Base(Configuration):
                     "codalab.context_processors.app_version_proc",
                     'django.template.context_processors.request',
                     "codalab.context_processors.common_settings",
+                    "codalab.context_processors.competitions_list",
                     "django_switchuser.context_processors.su_state",
                 ],
                 'debug': DEBUG

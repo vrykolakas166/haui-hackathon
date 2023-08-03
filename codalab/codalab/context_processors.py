@@ -1,5 +1,5 @@
 from django.conf import settings
-
+from ..apps.web.models import Competition
 from codalab import settings as codalab_settings
 
 
@@ -23,3 +23,7 @@ def common_settings(request):
         'USE_MAILCHIMP': bool(settings.MAILCHIMP_API_KEY),
         'GOOGLE_ANALYTICS': codalab_settings.GOOGLE_ANALYTICS,
     }
+
+def competitions_list(request):
+    competitions = list(Competition.objects.all())
+    return {'the_competitions': competitions}
