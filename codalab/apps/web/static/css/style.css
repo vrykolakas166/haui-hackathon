@@ -350,3 +350,15 @@ td input{
   border-radius: 8px;
   color: black;
 }
+
+.competitionPreloader {
+  background:url('../img/Preloader_Medium.gif') no-repeat center center;
+  width:50px;
+  height:50px;
+  position:absolute;
+  z-index:10;
+  margin:-25px 0 0 -25px;
+  left:50%;
+  top:50%;
+  display:block;
+}
