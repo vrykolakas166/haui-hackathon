@@ -107,6 +107,6 @@ $(window).ready(function () {
 });
 
 $(window).resize(function(){
-  var strPercent = $('#time_locs').width() / time_line_init_width + "%";
+  var strPercent = $('#time_locs').width() / time_line_init_width * 100 + "%";
   $('#time_locs').css("scale", strPercent);
 });
