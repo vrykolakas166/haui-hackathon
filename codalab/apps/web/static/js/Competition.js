@@ -614,7 +614,7 @@ var Competition;
                         $('a[href="traceback/' + submissionId + '/"]').parent().html('Error: <br><pre>' + data.exception_details + '</pre>');
                     }
                 }
-                $('.competitionPreloader').hide();
+                $('.competitionPreloader').remove();
             },
             error: function(xhr, status, err) {
 
