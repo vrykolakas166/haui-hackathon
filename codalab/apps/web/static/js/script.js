@@ -1,5 +1,6 @@
 var cont = 0;
 var isSignIn = true;
+var time_line_init_width = $("#time_line").clientWidth;
 
 function sliderButton1() {
   $("#slider-1").addClass("translate-x-[50%]");
@@ -103,4 +104,9 @@ function glowBorderOff(e){
 
 $(window).ready(function () {
   $("#sButton1").addClass("bg-[#9affff]");
+});
+
+$(window).resize(function(){
+  var strPercent = $('#time_locs').clientWidth / time_line_init_width + "%";
+  $('#time_locs').css("scale", strPercent);
 });
