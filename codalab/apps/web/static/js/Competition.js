@@ -131,7 +131,7 @@ var Competition;
             }
         });
     };
-    var isAscending = true;
+
     Competition.getPhaseResults = function(competitionId, phaseId) {
         $('.competition_results').html('').append("<div class='competitionPreloader'></div>").children().css({ 'top': '200px', 'display': 'block' });
         var url = '/competitions/' + competitionId + '/results/' + phaseId;
@@ -159,7 +159,7 @@ var Competition;
                             if (isNaN(br)) {
                                 br = 100000;
                             }
-                            return isAscending ? ar - br : br - ar;
+                            return ar - br;
                         });
                         var parent = rows[0].parentNode.parentNode;
                         var clonedRows = sortedRows.map(function() { return this.parentNode.cloneNode(true); });
