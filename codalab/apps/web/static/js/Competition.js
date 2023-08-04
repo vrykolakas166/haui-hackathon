@@ -159,7 +159,8 @@ var Competition;
                             if (isNaN(br)) {
                                 br = 100000;
                             }
-                            console.log("ar - br:" + ar - br);
+                            console.log("ar:" + ar);
+                            console.log("br:" + br);
                             return ar - br;
                         });
                         var parent = rows[0].parentNode.parentNode;
