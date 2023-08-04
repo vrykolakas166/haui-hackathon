@@ -131,7 +131,7 @@ var Competition;
             }
         });
     };
-
+    var isAscending = true;
     Competition.getPhaseResults = function(competitionId, phaseId) {
         $('.competition_results').html('').append("<div class='competitionPreloader'></div>").children().css({ 'top': '200px', 'display': 'block' });
         var url = '/competitions/' + competitionId + '/results/' + phaseId;
@@ -159,13 +159,10 @@ var Competition;
                             if (isNaN(br)) {
                                 br = 100000;
                             }
-                            console.log("ar:" + ar);
-                            console.log("br:" + br);
-                            return ar - br;
+                            return isAscending ? ar - br : br - ar;
                         });
                         var parent = rows[0].parentNode.parentNode;
                         var clonedRows = sortedRows.map(function() { return this.parentNode.cloneNode(true); });
-                        console.log("clonedRows:" + clonedRows);
                         for (var i = 0; i < clonedRows.length; i++) {
                             $(clonedRows[i]).find('td.row-position').text($(clonedRows[i]).find('td.column-selected span').text());
                             parent.insertBefore(clonedRows[i], rows[i].parentNode);
