@@ -159,10 +159,12 @@ var Competition;
                             if (isNaN(br)) {
                                 br = 100000;
                             }
+                            console.log("ar - br:" + ar - br);
                             return ar - br;
                         });
                         var parent = rows[0].parentNode.parentNode;
                         var clonedRows = sortedRows.map(function() { return this.parentNode.cloneNode(true); });
+                        console.log("clonedRows:" + clonedRows);
                         for (var i = 0; i < clonedRows.length; i++) {
                             $(clonedRows[i]).find('td.row-position').text($(clonedRows[i]).find('td.column-selected span').text());
                             parent.insertBefore(clonedRows[i], rows[i].parentNode);
