@@ -1,6 +1,6 @@
 var cont = 0;
 var isSignIn = true;
-var time_line_init_width = $("#time_line").clientWidth;
+var time_line_init_width = $("#time_line").width();
 
 function sliderButton1() {
   $("#slider-1").addClass("translate-x-[50%]");
@@ -107,6 +107,6 @@ $(window).ready(function () {
 });
 
 $(window).resize(function(){
-  var strPercent = $('#time_locs').clientWidth / time_line_init_width + "%";
+  var strPercent = $('#time_locs').width() / time_line_init_width + "%";
   $('#time_locs').css("scale", strPercent);
 });
