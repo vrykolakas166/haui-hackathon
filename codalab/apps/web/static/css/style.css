@@ -351,14 +351,23 @@ td input{
   color: black;
 }
 
+/* loader */
 .competitionPreloader {
-  background:url('../img/Preloader_Medium.gif') no-repeat center center;
-  width:50px;
-  height:50px;
-  position:absolute;
-  z-index:10;
-  margin:-25px 0 0 -25px;
-  left:50%;
-  top:50%;
-  display:block;
+  width:20px;
+  height:20px;
+  background:#25b09b;
+  box-shadow:0 0 60px 15px #25b09b;
+  transform: translate(-80px);
+  clip-path:inset(0);
+  animation:
+    w4-1 0.5s ease-in-out infinite alternate,
+    w4-2 1s   ease-in-out infinite;
+}
+@keyframes w4-1 {
+  100% {transform:translateX(80px)}
+}
+@keyframes w4-2 {
+   33% {clip-path:inset(0 0 0 -100px)}
+   50% {clip-path:inset(0 0 0 0)     }
+   83% {clip-path:inset(0 -100px 0 0)}
 }
