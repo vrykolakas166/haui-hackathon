@@ -485,7 +485,7 @@ var Competition;
             elem.find('a').each(function(i) { $(this).attr('href', $(this).attr('href').replace('_', nTr.id)) });
 
             if ($(nTr).attr('data-description') !== undefined) {
-                elem.find('.submission_description').html('<b>Description:</b> <br><pre>' + $(nTr).attr('data-description') + '</pre>');
+                elem.find('.submission_description').html('<b>Description:</b> <br><div class="p-2 my-1 bg-[#111160]">' + $(nTr).attr('data-description') + '</div>');
             }
             if ($(nTr).attr('data-team-name')) {
                 elem.find('.submission_team_name').html('<b>Team name:</b> ' + $(nTr).attr('data-team-name'));
