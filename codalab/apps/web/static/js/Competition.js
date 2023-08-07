@@ -611,7 +611,7 @@ var Competition;
                     $(obj).addClass('hide');
                     $(obj).parent().parent().find('a').removeClass('hide');
                     if (data.exception_details) {
-                        $('a[href="traceback/' + submissionId + '/"]').parent().html('Error: <br><pre>' + data.exception_details + '</pre>');
+                        $('a[href="traceback/' + submissionId + '/"]').parent().html('Error: <br><pre style="text-wrap: wrap;">' + data.exception_details + '</pre>');
                     }
                 }
                 $('.competitionPreloader').remove();
