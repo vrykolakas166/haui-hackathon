@@ -371,3 +371,14 @@ td input{
    50% {clip-path:inset(0 0 0 0)     }
    83% {clip-path:inset(0 -100px 0 0)}
 }
+
+/* table responsive */
+@media screen and (max-width: 768px) {
+  .table-responsive {
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    -webkit-overflow-scrolling: touch;
+ }
+}
