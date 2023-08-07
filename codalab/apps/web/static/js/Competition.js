@@ -509,7 +509,7 @@ var Competition;
                 elem.find('.submission_organization_or_affiliation').html('<b>Organization/affiliation:</b> ' + $(nTr).attr('data-organization-or-affiliation'));
             }
             if ($(nTr).attr('data-exception')) {
-                elem.find('.traceback').html('Error: <br><pre>' + $(nTr).attr('data-exception') + '</pre>');
+                elem.find('.traceback').html('Error: <br><pre style="text-wrap: wrap; white-space: pre-wrap;">' + $(nTr).attr('data-exception') + '</pre>');
             }
 
             var isPublic = $(nTr).attr('data-is-public') ? 'private' : 'public';
