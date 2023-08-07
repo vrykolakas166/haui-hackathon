@@ -2930,6 +2930,14 @@ video {
 }
 @media (max-width: 768px) {
 
+  .max-\[768px\]\:mt-\[30px\] {
+    margin-top: 30px;
+  }
+
+  .max-\[768px\]\:w-\[50px\] {
+    width: 50px;
+  }
+
   .max-\[768px\]\:scale-50 {
     --tw-scale-x: .5;
     --tw-scale-y: .5;
