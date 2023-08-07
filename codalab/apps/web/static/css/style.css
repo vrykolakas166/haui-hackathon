@@ -382,3 +382,7 @@ td input{
     -webkit-overflow-scrolling: touch;
  }
 }
+
+.column-selected{
+  background-color: #739cb9;
+}
