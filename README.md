@@ -1,9 +1,4 @@
-![CodaLab logo](codalab/apps/web/static/img/codalab-logo-fullcolor-positive.png) [![Circle CI](https://circleci.com/gh/codalab/codalab-competitions.svg?style=shield)](https://circleci.com/gh/codalab/codalab-competitions)
-[![codecov](https://codecov.io/gh/codalab/codalab-competitions/branch/develop/graph/badge.svg)](https://codecov.io/gh/codalab/codalab-competitions)
-
-
-
-## What is CodaLab?
+## THIS PROJECT based on CodaLab opensource
 
 CodaLab is an open-source web-based platform that enables researchers, developers, and data scientists to collaborate, with the goal of advancing research fields where machine learning and advanced computation is used.  CodaLab helps to solve many common problems in the arena of data-oriented research through its online community where people can share worksheets and participate in competitions.
 
@@ -33,8 +28,8 @@ $ sudo usermod -aG docker $USER
 
 Clone this repo and get the default environment setup
 ```
-$ git clone https://github.com/codalab/codalab-competitions
-$ cd codalab-competitions
+$ git clone https://github.com/vrykolakas166/haui-hackathon
+$ cd haui-hackathon
 $ cp .env_sample .env
 $ pip install docker-compose
 $ docker-compose up -d
