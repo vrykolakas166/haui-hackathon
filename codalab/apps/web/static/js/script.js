@@ -32,6 +32,7 @@ function sliderBack() {
     cont--;
   }
   else {
+    sliderButton2()
     cont = 2;
   }
 }
@@ -42,6 +43,7 @@ function sliderForward() {
     cont++;
   }
   else {
+    sliderButton1();
     cont = 1;
   }
 }

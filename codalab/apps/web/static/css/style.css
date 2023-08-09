@@ -76,11 +76,11 @@ li.active {
 .navlinks::before{
   content: '';
   position: absolute;
-  width: 80px;
-  height: 5px;
+  width: 70px;
+  height: 4px;
   background-color: #9affff;
   border-radius: 16px;
-  bottom: -2px;
+  bottom: -4px;
   visibility: hidden;
 }
 
