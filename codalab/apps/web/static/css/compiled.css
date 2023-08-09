@@ -2205,11 +2205,14 @@ video {
 .text-\[20px\] {
   font-size: 20px;
 }
-.text-\[22px\] {
-  font-size: 22px;
-}
 .text-\[24px\] {
   font-size: 24px;
+}
+.text-\[28px\] {
+  font-size: 28px;
+}
+.text-\[30px\] {
+  font-size: 30px;
 }
 .text-\[32px\] {
   font-size: 32px;
@@ -2217,14 +2220,11 @@ video {
 .text-\[36px\] {
   font-size: 36px;
 }
-.text-\[40px\] {
-  font-size: 40px;
+.text-\[42px\] {
+  font-size: 42px;
 }
 .text-\[46px\] {
   font-size: 46px;
-}
-.text-\[48px\] {
-  font-size: 48px;
 }
 .text-\[50px\] {
   font-size: 50px;
@@ -2234,12 +2234,6 @@ video {
 }
 .text-\[60px\] {
   font-size: 60px;
-}
-.text-\[64px\] {
-  font-size: 64px;
-}
-.text-\[70px\] {
-  font-size: 70px;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -2886,28 +2880,20 @@ video {
     font-size: 20px;
   }
 
-  .max-\[1200px\]\:text-\[24px\] {
-    font-size: 24px;
+  .max-\[1200px\]\:text-\[22px\] {
+    font-size: 22px;
   }
 
-  .max-\[1200px\]\:text-\[28px\] {
-    font-size: 28px;
+  .max-\[1200px\]\:text-\[30px\] {
+    font-size: 30px;
   }
 
-  .max-\[1200px\]\:text-\[35px\] {
-    font-size: 35px;
-  }
-
-  .max-\[1200px\]\:text-\[40px\] {
-    font-size: 40px;
+  .max-\[1200px\]\:text-\[32px\] {
+    font-size: 32px;
   }
 
   .max-\[1200px\]\:text-\[46px\] {
     font-size: 46px;
-  }
-
-  .max-\[1200px\]\:text-\[60px\] {
-    font-size: 60px;
   }
 }
 @media (max-width: 1000px) {
@@ -2998,28 +2984,20 @@ video {
     font-size: 18px;
   }
 
-  .max-\[768px\]\:text-\[20px\] {
-    font-size: 20px;
+  .max-\[768px\]\:text-\[22px\] {
+    font-size: 22px;
   }
 
   .max-\[768px\]\:text-\[24px\] {
     font-size: 24px;
   }
 
-  .max-\[768px\]\:text-\[30px\] {
-    font-size: 30px;
-  }
-
-  .max-\[768px\]\:text-\[32px\] {
-    font-size: 32px;
+  .max-\[768px\]\:text-\[28px\] {
+    font-size: 28px;
   }
 
   .max-\[768px\]\:text-\[36px\] {
     font-size: 36px;
-  }
-
-  .max-\[768px\]\:text-\[50px\] {
-    font-size: 50px;
   }
 }
 @media (max-width: 600px) {
@@ -3039,12 +3017,12 @@ video {
     gap: 0.75rem;
   }
 
-  .sm\:text-\[16px\] {
-    font-size: 16px;
+  .sm\:text-\[14px\] {
+    font-size: 14px;
   }
 
-  .sm\:text-\[20px\] {
-    font-size: 20px;
+  .sm\:text-\[16px\] {
+    font-size: 16px;
   }
 
   .sm\:underline {
@@ -3062,12 +3040,12 @@ video {
     gap: 1.5rem;
   }
 
-  .md\:text-\[20px\] {
-    font-size: 20px;
+  .md\:text-\[18px\] {
+    font-size: 18px;
   }
 
-  .md\:text-\[24px\] {
-    font-size: 24px;
+  .md\:text-\[20px\] {
+    font-size: 20px;
   }
 
   .min-\[768px\]\:text-justify {
@@ -3085,12 +3063,12 @@ video {
     gap: 3rem;
   }
 
-  .lg\:text-\[24px\] {
-    font-size: 24px;
+  .lg\:text-\[22px\] {
+    font-size: 22px;
   }
 
-  .lg\:text-\[32px\] {
-    font-size: 32px;
+  .lg\:text-\[28px\] {
+    font-size: 28px;
   }
 }
 @media (prefers-color-scheme: dark) {
