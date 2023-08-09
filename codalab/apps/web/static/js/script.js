@@ -66,6 +66,7 @@ function toggleSign() {
     mes.text("Already have an account?");
     overlay.removeClass("translate-x-[101%]");
     overlay.addClass("translate-x-[-1%]");
+    overlay.css("box-shadow","10px 0px 15px -8px black");
     scnSignIn.removeClass("opacity-1");
     scnSignIn.addClass("opacity-0");
     scnSignUp.removeClass("opacity-0");
@@ -75,6 +76,7 @@ function toggleSign() {
     mes.text("Don’t have an account?");
     overlay.addClass("translate-x-[101%]");
     overlay.removeClass("translate-x-[-1%]");
+    overlay.css("box-shadow","-10px 0px 15px -8px black");
     scnSignIn.addClass("opacity-1");
     scnSignIn.removeClass("opacity-0");
     scnSignUp.addClass("opacity-0");

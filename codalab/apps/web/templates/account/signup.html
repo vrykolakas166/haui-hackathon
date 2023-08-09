@@ -6,9 +6,9 @@
 {% block head_title %}Sign Up{% endblock head_title %}
 
 {% block content %}
-<div class="relative mx-auto flex h-[100vh] w-[90vw] flex-row rounded-3xl bg-white items-center mb-16 py-10">
+<div class="relative mx-auto flex w-[75vw] flex-row rounded-3xl bg-white items-center mb-16 py-10">
   <!-- Sign in -->
-  <div id="screenSignIn" class="flex w-[45vw] flex-col items-center gap-2 transition duration-700">
+  <div id="screenSignIn" class="flex w-[50%] flex-col items-center gap-2 transition duration-700">
     <div class="text-[60px] font-black w-[440px] h-[100px] text-center text-[#3c3b3b]">Sign In</div>
     <form class="w-[80%]" method="POST" action="{% url 'account_login' %}">
       {% csrf_token %}
@@ -46,7 +46,7 @@
     </form>
   </div>
   <!-- Sign up -->
-  <div id="screenSignUp" class="flex w-[45vw] flex-col items-center gap-2 transition duration-700">
+  <div id="screenSignUp" class="flex w-[50%] flex-col items-center gap-2 transition duration-700">
     <div class="text-[60px] font-black w-[440px] h-[100px] text-center text-[#3c3b3b]">Sign Up</div>
     <form class="w-[80%]" id="signup_form" method="post" action="{% url 'account_signup' %}">
       {% csrf_token %}
@@ -111,7 +111,8 @@
     </form>
   </div>
   <div id="overlay"
-    class="absolute left-0 top-0 h-full w-[45vw] rounded-3xl bg-[#313175] transition duration-700 translate-x-[-1%]">
+    style="background-image: url('{% static 'img/home/login_overlay_bg.jpg' %}'); background-size: cover;"
+    class="absolute left-0 top-0 h-full w-[50%] rounded-3xl bg-[#313175] transition duration-700 translate-x-[-1%]">
   </div>
 </div>
 {% endblock %}
