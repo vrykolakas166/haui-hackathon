@@ -622,9 +622,6 @@ video {
 .right-0 {
   right: 0px;
 }
-.right-1 {
-  right: 0.25rem;
-}
 .right-8 {
   right: 2rem;
 }
@@ -927,9 +924,6 @@ video {
 .h-full {
   height: 100%;
 }
-.max-h-\[300px\] {
-  max-height: 300px;
-}
 .max-h-\[330px\] {
   max-height: 330px;
 }
@@ -954,9 +948,6 @@ video {
 .w-12 {
   width: 3rem;
 }
-.w-\[100vw\] {
-  width: 100vw;
-}
 .w-\[1200px\] {
   width: 1200px;
 }
@@ -980,9 +971,6 @@ video {
 }
 .w-\[30px\] {
   width: 30px;
-}
-.w-\[400px\] {
-  width: 400px;
 }
 .w-\[40px\] {
   width: 40px;
@@ -1109,6 +1097,10 @@ video {
 }
 .translate-y-\[-100px\] {
   --tw-translate-y: -100px;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.translate-y-\[-20px\] {
+  --tw-translate-y: -20px;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .scale-x-\[-1\] {
@@ -1520,6 +1512,9 @@ video {
 .gap-5 {
   gap: 1.25rem;
 }
+.gap-6 {
+  gap: 1.5rem;
+}
 .gap-7 {
   gap: 1.75rem;
 }
@@ -1930,10 +1925,6 @@ video {
 }
 .bg-\[rgba\(255\2c 255\2c 255\2c 0\.29\)\] {
   background-color: rgba(255,255,255,0.29);
-}
-.bg-blue-600 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(37 99 235 / var(--tw-bg-opacity));
 }
 .bg-gray-500 {
   --tw-bg-opacity: 1;
@@ -2582,6 +2573,11 @@ video {
   --tw-shadow-colored: 0px -25px 30px 10px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
 .shadow-sm {
   --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
   --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
@@ -2929,20 +2925,12 @@ video {
 }
 @media (max-width: 1000px) {
 
-  .max-\[1000px\]\:flex {
-    display: flex;
-  }
-
   .max-\[1000px\]\:hidden {
     display: none;
   }
 
   .max-\[1000px\]\:w-\[50px\] {
     width: 50px;
-  }
-
-  .max-\[1000px\]\:flex-col {
-    flex-direction: column;
   }
 
   .max-\[1000px\]\:justify-center {

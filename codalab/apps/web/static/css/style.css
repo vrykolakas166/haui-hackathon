@@ -386,3 +386,27 @@ td input{
 .column-selected{
   background-color: #739cb9;
 }
+
+/* What do others say section */
+.inelement{
+  opacity: 0.1;
+  transition: opacity 0.3s, transform 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  
+}
+
+.inelement.active{
+  opacity: 100%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.inelement.next{
+  transform: translate(-50%, 50%) scale(0.9);
+}
+
+.inelement.previous{
+  transform: translate(-50%, -150%) scale(0.9);
+}
