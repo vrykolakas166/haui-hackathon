@@ -31,12 +31,18 @@ function sliderBack() {
     sliderButton1();
     cont--;
   }
+  else {
+    cont = 2;
+  }
 }
 
 function sliderForward() {
   if (cont < 2) {
     sliderButton2()
     cont++;
+  }
+  else {
+    cont = 1;
   }
 }
 
@@ -107,6 +113,9 @@ $(window).ready(function () {
 });
 
 $(window).resize(function(){
+  if($('#time_locs').width() / time_line_init_width * 100 > 141){
+    return;
+  }
   var strPercent = $('#time_locs').width() / time_line_init_width * 100 + "%";
   $('#time_locs').css("scale", strPercent);
 });
