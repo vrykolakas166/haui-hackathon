@@ -241,18 +241,38 @@ setInterval(focusNextElement, delay);
 // scroll event
 $(window).on("scroll", function() {
   if(window.scrollY < 234){
-    $("#toTop").addClass("hidden");
+    if(!$("#toTop").hasClass("hidden")){
+      $("#toTop").addClass("hidden");
+    }
   }
   else{
-    $("#toTop").removeClass("hidden");
+    if($("#toTop").hasClass("hidden")){
+      $("#toTop").removeClass("hidden");
+    }
+    if(window.scrollY + $("footer").height() >= $("footer").offset().top){
+      if($("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
+        $("#toTop").removeClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
+      }
+      if(!$("#toTop").hasClass("bg-[#111160]")){
+        $("#toTop").addClass("bg-[#111160]");
+      }
+    }
+    else{
+      if(!$("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
+        $("#toTop").addClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
+      }
+      if($("#toTop").hasClass("bg-[#111160]")){
+        $("#toTop").removeClass("bg-[#111160]");
+      }
+    }
   }
+  
 });
 
 // go to top
 $("#toTop").on("click", function () {
-  //1 second of animation time
   //html works for FFX but not Chrome
   //body works for Chrome but not FFX
   //This strange selector seems to work universally
-  $("html, body").animate({scrollTop: 0}, 350);
+  $("html, body").animate({scrollTop: 0}, 500);
 });
