@@ -2988,6 +2988,10 @@ video {
     flex-direction: column;
   }
 
+  .max-\[768px\]\:gap-0 {
+    gap: 0px;
+  }
+
   .max-\[768px\]\:gap-2 {
     gap: 0.5rem;
   }
