@@ -237,3 +237,22 @@ elements.forEach((element, index) => {
 });
 delay = countWords(content) * timePerWordMilliseconds;
 setInterval(focusNextElement, delay);
+
+// scroll event
+$(window).on( "scroll", function() {
+  if(window.scrollY > 200){
+    $("toTop").addClass("hidden");
+  }
+  else{
+    $("toTop").removeClass("hidden");
+  }
+});
+
+// go to top
+function goToTop () {
+  //1 second of animation time
+  //html works for FFX but not Chrome
+  //body works for Chrome but not FFX
+  //This strange selector seems to work universally
+  $("html, body").animate({scrollTop: 0}, 1000);
+};
