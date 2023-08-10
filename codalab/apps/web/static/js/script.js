@@ -31,20 +31,12 @@ function sliderBack() {
     sliderButton1();
     cont--;
   }
-  else {
-    sliderButton2()
-    cont = 2;
-  }
 }
 
 function sliderForward() {
   if (cont < 2) {
     sliderButton2()
     cont++;
-  }
-  else {
-    sliderButton1();
-    cont = 1;
   }
 }
 
