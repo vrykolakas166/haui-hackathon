@@ -121,7 +121,7 @@ $(window).resize(function(){
 const insideElementsContainer = document.querySelector('.in-elements');
 
 // Simulate fetching data from the server (you would replace this with your actual data)
-const numberOfElements = 100; // Change this based on data
+const numberOfElements = 10; // Change this based on data
 const elements = [];
 // Change content here or bring in loop based on data
 const content = "This competition filled me with excitement as I prepared to showcase my skills and creativity. The nerves were palpable, but the opportunity to push my boundaries drove me forward.";
