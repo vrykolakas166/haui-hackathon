@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body{
+  overflow-x: hidden;
+}
+
 .gradient-border {
   border-radius: 30px;
   border: 4px solid transparent;
@@ -76,11 +80,11 @@ li.active {
 .navlinks::before{
   content: '';
   position: absolute;
-  width: 80px;
-  height: 5px;
+  width: 70px;
+  height: 4px;
   background-color: #9affff;
   border-radius: 16px;
-  bottom: -2px;
+  bottom: -4px;
   visibility: hidden;
 }
 
@@ -385,4 +389,28 @@ td input{
 
 .column-selected{
   background-color: #739cb9;
+}
+
+/* What do others say section */
+.inelement{
+  opacity: 0.1;
+  transition: opacity 0.3s, transform 0.5s;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  
+}
+
+.inelement.active{
+  opacity: 100%;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.inelement.next{
+  transform: translate(-50%, 50%) scale(0.9);
+}
+
+.inelement.previous{
+  transform: translate(-50%, -150%) scale(0.9);
 }
