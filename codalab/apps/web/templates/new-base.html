@@ -77,15 +77,15 @@
 
 <body style="background-image: url('{% static 'img/home/HomeConius.png' %}'); background-size: cover;">
     <!-- Header start -->
-    <header class="text-white h-[150px] flex items-center justify-between lg:mx-20 md:mx-12 sm:mx-4 xs:mx-2">
+    <header class="text-white h-[150px] flex items-center justify-between lg:mx-20 md:mx-12 sm:mx-4 mx-2">
         <a style="text-decoration: none;" href="/" class="lg:text-[28px] md:text-[20px] sm:text-[16px] font-black text-white">Haui Hackathon</a>
         {% block top_bar_right_menus %}
-            <div class="flex items-center justify-center lg:gap-12 md:gap-6">
+            <div class="flex items-center justify-center lg:gap-12 md:gap-6 gap-4">
                 <a href="/" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
                     Home
                 </a>
                 <a href="/challenge" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
-                    Challenges
+                    Challenge
                 </a>
             </div>
         {% endblock top_bar_right_menus %}
@@ -166,14 +166,14 @@
         <div class="flex flex-col justify-center">
             <div>
                 <div class="font-extrabold text-[24px] my-3">Organizer</div>
-                <div class="flex items-center justify-start gap-8">
+                <div class="flex items-center justify-start gap-8 flex-wrap">
                     <img class="w-[60px]" src="{% static "img/home/haui-logo.png" %}" alt="">
                     <img class="w-[60px]" src="{% static "img/home/ntq-logo.jpg" %}" alt="">
                 </div>
             </div>
             <div>
                 <div class="font-extrabold text-[24px] my-3">Media partner</div>
-                <div class="flex items-center justify-start gap-8">
+                <div class="flex items-center justify-start gap-8 flex-wrap">
                     <img class="w-[60px]" src="{% static "img/home/haui-logo.png" %}" alt="">
                 </div>
             </div>
@@ -181,7 +181,7 @@
         <div class="flex flex-col ">
             <div>
                 <div class="font-extrabold text-[24px] my-3">Specialized partner</div>
-                <div class="flex items-center justify-start gap-8">
+                <div class="flex items-center justify-start gap-8 flex-wrap">
                     <img class="w-[60px]" src="{% static "img/home/haui-logo.png" %}" alt="">
                     <img class="w-[60px]" src="{% static "img/home/haui-logo.png" %}" alt="">
                     <img class="w-[60px]" src="{% static "img/home/haui-logo.png" %}" alt="">

@@ -680,6 +680,10 @@ video {
   margin-left: 3rem;
   margin-right: 3rem;
 }
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -2889,6 +2893,10 @@ video {
     transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
   }
 
+  .max-\[1200px\]\:gap-0 {
+    gap: 0px;
+  }
+
   .max-\[1200px\]\:gap-12 {
     gap: 3rem;
   }
@@ -2986,10 +2994,6 @@ video {
 
   .max-\[768px\]\:flex-col {
     flex-direction: column;
-  }
-
-  .max-\[768px\]\:gap-0 {
-    gap: 0px;
   }
 
   .max-\[768px\]\:gap-2 {
