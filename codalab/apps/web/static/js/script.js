@@ -238,6 +238,8 @@ elements.forEach((element, index) => {
 delay = countWords(content) * timePerWordMilliseconds;
 setInterval(focusNextElement, delay);
 
+var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
+  document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
 // scroll event
 $(window).on("scroll", function() {
   if(window.scrollY < 234){
@@ -249,7 +251,7 @@ $(window).on("scroll", function() {
     if($("#toTop").hasClass("hidden")){
       $("#toTop").removeClass("hidden");
     }
-    if(window.scrollY + $("footer").height() >= $("footer").offset().top){
+    if(window.scrollY >= limit - window.innerHeight - 170){
       if($("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
         $("#toTop").removeClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
       }
