@@ -509,7 +509,7 @@ var Competition;
                 elem.find('.submission_organization_or_affiliation').html('<b>Organization/affiliation:</b> ' + $(nTr).attr('data-organization-or-affiliation'));
             }
             if ($(nTr).attr('data-exception')) {
-                elem.find('.traceback').html('Error: <br><pre style="text-wrap: wrap; white-space: pre-wrap;">' + $(nTr).attr('data-exception') + '</pre>');
+                elem.find('.traceback').html('Error: <br><pre style="bg-white/80 text-[#111160] text-wrap: wrap; white-space: pre-wrap;">' + $(nTr).attr('data-exception') + '</pre>');
             }
 
             var isPublic = $(nTr).attr('data-is-public') ? 'private' : 'public';
@@ -611,7 +611,7 @@ var Competition;
                     $(obj).addClass('hide');
                     $(obj).parent().parent().find('a').removeClass('hide');
                     if (data.exception_details) {
-                        $('a[href="traceback/' + submissionId + '/"]').parent().html('Error: <br><pre style="text-wrap: wrap; white-space: pre-wrap;">' + data.exception_details + '</pre>');
+                        $('a[href="traceback/' + submissionId + '/"]').parent().html('Error: <br><pre style="bg-white/80 text-[#111160] text-wrap: wrap; white-space: pre-wrap;">' + data.exception_details + '</pre>');
                     }
                 }
                 $('.competitionPreloader').remove();
