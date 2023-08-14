@@ -1,5 +1,6 @@
 ////What do others say section
 const insideElementsContainer = document.querySelector('.in-elements');
+let messageTitle = "";
 
 // Simulate fetching data from the server (you would replace this with your actual data)
 const numberOfElements = 10; // Change this based on data
@@ -158,21 +159,23 @@ $(window).on("scroll", function() {
     }
 
     // What others say show same time with milestone
-
-    const text = "What others say about";
     const letterContainer = document.querySelector(".letter-container");
     if (elementTop < windowHeight - elementVisible) {
-        for (const char of text) {
-            const letterSpan = document.createElement("span");
-            letterSpan.classList.add("animated_letter");
-            letterSpan.textContent = char === " " ? "\u00A0" : char;
-            letterContainer.appendChild(letterSpan);
+        if(messageTitle === ""){
+            messageTitle = "What others say about";
+            for (const char of messageTitle) {
+                const letterSpan = document.createElement("span");
+                letterSpan.classList.add("animated_letter");
+                letterSpan.textContent = char === " " ? "\u00A0" : char;
+                letterContainer.appendChild(letterSpan);
+            }
+            objSpan = document.createElement("span");
+            objSpan.classList.add("sr-only sm:not-sr-only");
+            objSpan.innerHTML = " HaUI Hackathon";
+            letterContainer.appendChild(objSpan);
         }
-        objSpan = document.createElement("span");
-        objSpan.classList.add("sr-only sm:not-sr-only");
-        objSpan.innerHTML = " HaUI Hackathon";
-        letterContainer.appendChild(objSpan);
     } else {
+        messageTitle = "";
         letterContainer.innerHTML = "";
     }
 });
