@@ -156,4 +156,27 @@ $(window).on("scroll", function() {
         $("#milestone_6").removeClass("translate-y-[90px] opacity-100 showtime-element");
         $("#milestone_7").removeClass("translate-y-[-110px] opacity-100 showtime-element");
     }
+
+    // What others say
+    var messages = document.getElementById("messages");
+    windowHeight = window.innerHeight;
+    elementTop = messages.getBoundingClientRect().top;
+    elementVisible = 150;
+
+    const text = "What others say about";
+    const letterContainer = document.querySelector(".letter-container");
+    if (elementTop < windowHeight - elementVisible) {
+        for (const char of text) {
+            const letterSpan = document.createElement("span");
+            letterSpan.classList.add("animated_letter");
+            letterSpan.textContent = char === " " ? "\u00A0" : char;
+            letterContainer.appendChild(letterSpan);
+        }
+        objSpan = document.createElement("span");
+        objSpan.classList.add("animated_letter sr-only sm:not-sr-only");
+        objSpan.innerHTML = " HaUI Hackathon";
+        letterContainer.appendChild(objSpan);
+    } else {
+        letterContainer.innerHTML = "";
+    }
 });

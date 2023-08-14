@@ -454,3 +454,23 @@ td input{
   transform: translateY(0);
   opacity: 1;
 }
+
+.letter-container {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.animated_letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: revealLetter .3s ease-in-out forwards;
+}
+
+@keyframes revealLetter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
