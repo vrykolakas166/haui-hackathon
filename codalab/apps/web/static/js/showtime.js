@@ -169,7 +169,7 @@ $(window).on("scroll", function() {
                 letterSpan.textContent = char === " " ? "\u00A0" : char;
                 letterContainer.appendChild(letterSpan);
             }
-            objSpan = document.createElement("span");
+            const objSpan = document.createElement("span");
             objSpan.classList.add("sr-only sm:not-sr-only");
             objSpan.innerHTML = " HaUI Hackathon";
             letterContainer.appendChild(objSpan);

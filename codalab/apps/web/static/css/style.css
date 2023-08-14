@@ -465,7 +465,7 @@ td input{
   display: inline-block;
   opacity: 0;
   transform: translateY(100%);
-  animation: revealLetter .5s ease-in-out forwards;
+  animation: revealLetter 1s ease-in-out forwards;
 }
 
 @keyframes revealLetter {
