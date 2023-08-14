@@ -40,6 +40,16 @@ function sliderForward() {
   }
 }
 
+setInterval(() => {
+  if(cont == 1){
+    sliderButton2();
+    cont = 2;
+  }else{
+    sliderButton1();
+    cont = 1;
+  }
+}, 3333);
+
 function setActive(e) {
   $(".custom-indicator").each(function () {
     $(this).removeClass("selected");
