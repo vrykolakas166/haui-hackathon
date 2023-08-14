@@ -262,7 +262,7 @@ $(window).on("scroll", function() {
   }
 
   //showtime
-  var challenge = $("#challeng-img");
+  var challenge = document.getElementById("challeng-img");
   var windowHeight = window.innerHeight;
   var elementTop = challenge.getBoundingClientRect().top;
   var elementVisible = 150;
