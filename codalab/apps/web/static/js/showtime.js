@@ -157,11 +157,7 @@ $(window).on("scroll", function() {
         $("#milestone_7").removeClass("translate-y-[-110px] opacity-100 showtime-element");
     }
 
-    // What others say
-    var messages = document.getElementById("messages");
-    windowHeight = window.innerHeight;
-    elementTop = messages.getBoundingClientRect().top;
-    elementVisible = 150;
+    // What others say show same time with milestone
 
     const text = "What others say about";
     const letterContainer = document.querySelector(".letter-container");
@@ -173,7 +169,7 @@ $(window).on("scroll", function() {
             letterContainer.appendChild(letterSpan);
         }
         objSpan = document.createElement("span");
-        objSpan.classList.add("animated_letter sr-only sm:not-sr-only");
+        objSpan.classList.add("sr-only sm:not-sr-only");
         objSpan.innerHTML = " HaUI Hackathon";
         letterContainer.appendChild(objSpan);
     } else {
