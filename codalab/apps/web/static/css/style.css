@@ -270,6 +270,10 @@ button.selected{
   box-shadow: inset 0px 0px 7px 1px #e0e0e0;
 }
 
+.disabledStatus{
+  pointer-events: none;
+}
+
 div.form-group{
   display: flex;
   flex-direction: column;
@@ -413,4 +417,40 @@ td input{
 
 .inelement.previous{
   transform: translate(-50%, -150%) scale(0.9);
+}
+
+/* showtime */
+.showtime-element{
+  transition: all 0.5s ease-in-out;
+}
+
+#challenge-img{
+  transition: all 0.75s ease-in-out;
+
+}
+#challenge-img.showtime-1{
+  transform: rotate(360deg);
+}
+
+#challenge-text-1{
+  transform: translateX(-200px);
+  opacity: 0;
+}
+#challenge-text-2{
+  opacity: 0;
+}
+#challenge-text-3{
+  transform: translateY(100px);
+  opacity: 0;
+}
+#challenge-text-1.showtime-1_1{
+  transform: translateX(0);
+  opacity: 1;
+}
+#challenge-text-2.showtime-1_2{
+  opacity: 1;
+}
+#challenge-text-3.showtime-1_3{
+  transform: translateY(0);
+  opacity: 1;
 }

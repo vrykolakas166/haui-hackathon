@@ -7,7 +7,7 @@
 {% block content %}
 <main class="pt-16">
     <!-- Hero Section Start -->
-    <section class="text-white flex flex-col items-center justify-center">
+    <section id="hero" class="text-white flex flex-col items-center justify-center">
         <div class="font-black text-[56px] max-[1200px]:text-[46px] max-[768px]:text-[36px]">
             HAUI Hackathon
             <span style="text-shadow: 0 0 10px rgba(154, 255, 255, 0.5)" class="text-[#9affff]">/</span>
@@ -85,26 +85,26 @@
     </section> -->
     <!-- Awards section End-->
     <!-- Challenges section Start-->
-    <section class="text-white w-[75vw] mx-auto mt-16">
+    <section id="challenges" class="text-white w-[75vw] mx-auto mt-16">
         <div style="text-shadow: 0 0 16px rgba(154, 255, 255, 0.5)" class="text-[50px] font-extrabold">
             Challenges
         </div>
         <div class="flex items-center justify-center gap-12 max-[1200px]:gap-8 max-[768px]:gap-6 max-[768px]:flex-col my-16">
-            <div
-                class="h-[18vw] min-h-[150px] min-w-[18vw] flex flex-col items-center justify-center text-center gradient-border">
+            <div id="challeng-img"
+                class="showtime-element h-[18vw] min-h-[150px] min-w-[18vw] flex flex-col items-center justify-center text-center gradient-border">
                 <img src="{%static "img/home/multiple_tracking_people.jpg" %}" alt="#" class="w-[120px] rounded-sm shadow-sm max-[1200px]:w-[90px] max-[1000px]:w-[50px]" />
                 <p class="uppercase font-bold text-[24px] max-[1200px]:text-[18px] max-[1000px]:text-[12px] mt-7">
                     Multiple People Tracking
                 </p>
             </div>
             <div>
-                <p class="uppercase font-bold text-[32px] max-[1200px]:text-[28px] max-[768px]:text-[24px]">
+                <p id="challenge-text-1" class="showtime-element uppercase font-bold text-[32px] max-[1200px]:text-[28px] max-[768px]:text-[24px]">
                     Multiple People Tracking
                 </p>
-                <p class="font-semibold text-[18px] max-[1200px]:text-[16px] max-[768px]:text-[14px]">
+                <p id="challenge-text-2" class="showtime-element font-semibold text-[18px] max-[1200px]:text-[16px] max-[768px]:text-[14px]">
                     Embark on the realm of the Multiple People Tracking Challenge, where technology intertwines with social dynamics. Engineer AI solutions that capture the essence of human interactions, enriching how we understand and connect with each other.
                 </p>
-                <p class="font-semibold text-[18px] max-[1200px]:text-[16px] max-[768px]:text-[14px] mt-5">
+                <p id="challenge-text-3" class="showtime-element font-semibold text-[18px] max-[1200px]:text-[16px] max-[768px]:text-[14px] mt-5">
                     Start now to reshape the way society and technology intersect, making the world a more interconnected and insightful place.
                 </p>
             </div>
@@ -155,7 +155,7 @@
     </section>
     <!-- Challenges section End-->
     <!-- TEAM section Start-->
-    <section class="text-white w-[75vw] mx-auto mt-16">
+    <section id="teams" class="text-white w-[75vw] mx-auto mt-16">
         <div style="text-shadow: 0 0 16px rgba(154, 255, 255, 0.5)" class="text-[50px] font-extrabold">
             Teams
         </div>
@@ -198,7 +198,7 @@
     </section>
     <!-- TEAM section End-->
     <!-- Timeline section Start-->
-    <section class="text-white w-[75vw] mx-auto my-16">
+    <section id="milestone" class="text-white w-[75vw] mx-auto my-16">
         <div style="text-shadow: 0 0 16px rgba(154, 255, 255, 0.5)" class="text-[50px] font-extrabold">
             Timeline
         </div>
@@ -212,7 +212,7 @@
             </svg>
             <div id="time_locs" class="w-full absolute top-0 h-full flex items-end justify-center gap-24">
                 <div class="h-[210px] w-[70px] flex justify-center">
-                    <div class="text-center font-semibold text-[16px] uppercase absolute translate-y-[-75px]">
+                    <div id="milestone_1" data-ind="1" class="showtime-element text-center font-semibold text-[16px] uppercase absolute opacity-0">
                         Registration opens
                         <br />
                         15/08/2023
@@ -225,7 +225,7 @@
                     </div>
                 </div>
                 <div class="h-[165px] w-[70px] flex justify-center">
-                    <div class="text-center font-semibold text-[16px] uppercase absolute translate-y-[90px]">
+                    <div id="milestone_2" data-ind="2" class="showtime-element text-center font-semibold text-[16px] uppercase absolute opacity-0">
                         Registration closes
                         <br />
                         25/08/2023
@@ -238,7 +238,7 @@
                     </div>
                 </div>
                 <div class="h-[110px] w-[70px] flex justify-center">
-                    <div class="text-center font-semibold text-[16px] uppercase absolute translate-y-[-75px]">
+                    <div id="milestone_3" data-ind="3" class="showtime-element text-center font-semibold text-[16px] uppercase absolute opacity-0">
                         Phase 1 starts
                         <br />
                         30/06/2023
@@ -251,7 +251,7 @@
                     </div>
                 </div>
                 <div class="h-[100px] w-[70px] flex justify-center">
-                    <div class="text-center font-semibold text-[16px] uppercase absolute translate-y-[90px]">
+                    <div id="milestone_4" data-ind="4" class="showtime-element text-center font-semibold text-[16px] uppercase absolute opacity-0">
                         Phase 1 ends
                         <br />
                         26/08/2023
@@ -264,7 +264,7 @@
                     </div>
                 </div>
                 <div class="h-[135px] w-[70px] flex justify-center">
-                    <div class="text-center font-semibold text-[16px] uppercase absolute translate-y-[-75px]">
+                    <div id="milestone_5" data-ind="5" class="showtime-element text-center font-semibold text-[16px] uppercase absolute opacity-0">
                         Phase 2 starts
                         <br />
                         15/10/2023
@@ -277,7 +277,7 @@
                     </div>
                 </div>
                 <div class="h-[210px] w-[70px] flex justify-center">
-                    <div class="text-center font-semibold text-[16px] uppercase absolute translate-y-[90px]">
+                    <div id="milestone_6" data-ind="6" class="showtime-element text-center font-semibold text-[16px] uppercase absolute opacity-0">
                         Phase 2 ends
                         <br />
                         16/10/2023
@@ -290,7 +290,7 @@
                     </div>
                 </div>
                 <div class="h-[280px] w-[70px] flex justify-center">
-                    <div class="text-center font-semibold text-[16px] uppercase absolute translate-y-[-110px]">
+                    <div id="milestone_7" data-ind="7" class="showtime-element text-center font-semibold text-[16px] uppercase absolute opacity-0">
                         Solutions and 
                         <br />
                         winners announcement
@@ -310,7 +310,7 @@
     </section>
     <!-- Timeline section End-->
     <!-- Message section Start-->
-    <section class="relative text-white w-[75vw] mx-auto mt-32">
+    <section id="messages" class="relative text-white w-[75vw] mx-auto mt-32">
         <div class="absolute w-full text-center font-bold text-[24px] translate-y-[-20px] max-[768px]:text-[18px]">
             What others say about
             <span class="sr-only sm:not-sr-only"> HaUI Hackathon</span>
@@ -321,5 +321,6 @@
         </div>
     </section>
     <!-- Message section End-->
+    <script src="{% static "js/showtime.js" %}"></script>
 </main>
 {% endblock content %}

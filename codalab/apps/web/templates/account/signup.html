@@ -54,7 +54,7 @@
         <div class="text-[24px] font-bold ml-3">Username</div>
         <input id="id_username" name="username" type="text" value="{{ form.username.value|default_if_none:"" }}"
           class="w-full rounded-lg border border-[#207198] px-4 py-3 text-sm outline-none"
-          placeholder="Enter username" />
+          placeholder="Enter username" autofocus/>
         {% for field, msg in form.errors.items %}
         {% if field == "username" %}
           <div class="text-[16px] ml-3 text-[#ff0c3e]">{{ msg }}</div>
@@ -120,5 +120,8 @@
 {% block extra_scripts %}
   <script>
     setTimeout(() => toggleSign(), 100);
+    $(document).ready(function() {
+      window.scrollTo(0, 40);
+    });
   </script>
 {% endblock %}
