@@ -420,7 +420,11 @@ td input{
   transition: all 0.5s ease-in-out;
 }
 
-.showtime-1{
+#challenge-img{
+  transition: all 0.75s ease-in-out;
+
+}
+#challenge-img.showtime-1{
   transform: rotate(360deg);
 }
 
