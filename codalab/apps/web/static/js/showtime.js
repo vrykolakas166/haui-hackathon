@@ -167,7 +167,7 @@ $(window).on("scroll", function() {
             for (const char of messageTitle) {
                 const letterSpan = document.createElement("span");
                 letterSpan.classList.add("animated_letter");
-                letterSpan.style = `style="--i: ${i};`;
+                letterSpan.style = `style="--i: ${i};"`;
                 letterSpan.textContent = char === " " ? "\u00A0" : char;
                 letterContainer.appendChild(letterSpan);
                 i++;
