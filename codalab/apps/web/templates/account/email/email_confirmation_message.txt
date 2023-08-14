@@ -8,4 +8,4 @@ https://{{ current_site }}/accounts/confirm-email/{{ key }}/
 
 Enjoy!
 
-The CodaLab Team
+The HAUI Hackathon Team

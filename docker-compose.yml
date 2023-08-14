@@ -168,8 +168,9 @@ services:
     container_name: worker_site
       
   worker_compute:
-    image: codalab/competitions-v1-compute-worker:1.1.7
+    image: worker_computer_v2 #codalab/competitions-v1-compute-worker:1.1.7
     privileged: true
+    pull_policy: if_not_present
     volumes:
       - ${LOGGING_DIR}/worker_compute:/var/log/
       - ${SUBMISSION_TEMP_DIR}:${SUBMISSION_TEMP_DIR}
