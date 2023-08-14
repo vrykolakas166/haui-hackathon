@@ -172,8 +172,9 @@ $(window).on("scroll", function() {
                 letterContainer.appendChild(letterSpan);
                 i++;
             }
-            const xmlString = `<span style="--i: ${i};" class="sitename sr-only sm:not-sr-only">\u00A0HaUI Hackathon</span>`;
-            var objSpan = new DOMParser().parseFromString(xmlString, "text/xml");
+            const objSpanPa = document.createElement("div");
+            objSpanPa.innerHTML = `<span style="--i: ${i};" class="sitename sr-only sm:not-sr-only">\u00A0HaUI Hackathon</span>`;
+            var objSpan = objSpanPa.firstChild;
             letterContainer.appendChild(objSpan);
         }
     } else {
