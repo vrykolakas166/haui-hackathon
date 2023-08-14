@@ -56,13 +56,13 @@ $(window).on("scroll", function() {
     elementVisible = 150;
 
     if (elementTop < windowHeight - elementVisible) {
-        setTimeout($("#milestone_1").addClass("translate-y-[-75px] opacity-100"), $("#milestone_1").data("ind") * 300);
-        setTimeout($("#milestone_2").addClass("translate-y-[90px] opacity-100"), $("#milestone_2").data("ind") * 300);
-        setTimeout($("#milestone_3").addClass("translate-y-[-75px] opacity-100"), $("#milestone_3").data("ind") * 300);
-        setTimeout($("#milestone_4").addClass("translate-y-[90px] opacity-100"), $("#milestone_4").data("ind") * 300);
-        setTimeout($("#milestone_5").addClass("translate-y-[-75px] opacity-100"), $("#milestone_5").data("ind") * 300);
-        setTimeout($("#milestone_6").addClass("translate-y-[90px] opacity-100"), $("#milestone_6").data("ind") * 300);
-        setTimeout($("#milestone_7").addClass("translate-y-[-110px] opacity-100"), $("#milestone_7").data("ind") * 300);
+        setTimeout(() => $("#milestone_1").addClass("translate-y-[-75px] opacity-100"), $("#milestone_1").data("ind") * 300);
+        setTimeout(() => $("#milestone_2").addClass("translate-y-[90px] opacity-100"), $("#milestone_2").data("ind") * 300);
+        setTimeout(() => $("#milestone_3").addClass("translate-y-[-75px] opacity-100"), $("#milestone_3").data("ind") * 300);
+        setTimeout(() => $("#milestone_4").addClass("translate-y-[90px] opacity-100"), $("#milestone_4").data("ind") * 300);
+        setTimeout(() => $("#milestone_5").addClass("translate-y-[-75px] opacity-100"), $("#milestone_5").data("ind") * 300);
+        setTimeout(() => $("#milestone_6").addClass("translate-y-[90px] opacity-100"), $("#milestone_6").data("ind") * 300);
+        setTimeout(() => $("#milestone_7").addClass("translate-y-[-110px] opacity-100"), $("#milestone_7").data("ind") * 300);
     } else {
         $("#milestone_1").removeClass("translate-y-[-75px] opacity-100");
         $("#milestone_2").removeClass("translate-y-[90px] opacity-100"); 
