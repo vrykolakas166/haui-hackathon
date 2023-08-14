@@ -163,15 +163,17 @@ $(window).on("scroll", function() {
     if (elementTop < windowHeight - elementVisible) {
         if(messageTitle === ""){
             messageTitle = "What others say about";
+            let i = 1;
             for (const char of messageTitle) {
                 const letterSpan = document.createElement("span");
                 letterSpan.classList.add("animated_letter");
+                letterSpan.style = `style="--i: ${i};`;
                 letterSpan.textContent = char === " " ? "\u00A0" : char;
                 letterContainer.appendChild(letterSpan);
+                i++;
             }
             const objSpan = document.createElement("span");
-            objSpan.classList.add("sr-only sm:not-sr-only");
-            objSpan.innerHTML = " HaUI Hackathon";
+            objSpan.innerHTML = `<span class="sr-only sm:not-sr-only"> HaUI Hackathon</span>`;
             letterContainer.appendChild(objSpan);
         }
     } else {
