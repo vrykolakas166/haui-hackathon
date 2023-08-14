@@ -115,7 +115,7 @@ setInterval(focusNextElement, delay);
 $(window).on("scroll", function() {
     //// showtime
     // Challenge
-    var challenge = document.getElementById("challeng-img");
+    var challenge = document.getElementById("challenge-img");
     var windowHeight = window.innerHeight;
     var elementTop = challenge.getBoundingClientRect().top;
     var elementVisible = 150;
