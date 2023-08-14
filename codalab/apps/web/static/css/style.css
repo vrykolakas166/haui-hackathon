@@ -270,6 +270,10 @@ button.selected{
   box-shadow: inset 0px 0px 7px 1px #e0e0e0;
 }
 
+.disabledStatus{
+  pointer-events: none;
+}
+
 div.form-group{
   display: flex;
   flex-direction: column;
