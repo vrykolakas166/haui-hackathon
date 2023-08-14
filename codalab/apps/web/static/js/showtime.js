@@ -1,34 +1,5 @@
-var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight, 
-    document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight );
 // Scroll event
 $(window).on("scroll", function() {
-    if(window.scrollY < 234){
-        if(!$("#toTop").hasClass("hidden")){
-            $("#toTop").addClass("hidden");
-        }
-    }
-    else{
-        if($("#toTop").hasClass("hidden")){
-            $("#toTop").removeClass("hidden");
-        }
-        if(window.scrollY >= limit - window.innerHeight - 130){
-            if($("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
-                $("#toTop").removeClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
-            }
-            if(!$("#toTop").hasClass("bg-[#111160]")){
-                $("#toTop").addClass("bg-[#111160]");
-            }
-        }
-        else{
-            if(!$("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
-                $("#toTop").addClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
-            }
-            if($("#toTop").hasClass("bg-[#111160]")){
-                $("#toTop").removeClass("bg-[#111160]");
-            }
-        }
-    }
-
     //// showtime
     // Challenge
     var challenge = document.getElementById("challeng-img");
@@ -72,12 +43,4 @@ $(window).on("scroll", function() {
         $("#milestone_6").removeClass("translate-y-[90px] opacity-100 showtime-element");
         $("#milestone_7").removeClass("translate-y-[-110px] opacity-100 showtime-element");
     }
-});
-
-// Go to top
-$("#toTop").on("click", function () {
-    // Html works for FFX but not Chrome
-    // Body works for Chrome but not FFX
-    // This strange selector seems to work universally
-    $("html, body").animate({scrollTop: 0}, 500);
 });

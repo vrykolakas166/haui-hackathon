@@ -15,7 +15,7 @@
       <div>
         <div class="text-[24px] font-bold ml-3">Username</div>
         <input id="id_login" name="login" type="text" class="w-full rounded-lg border border-[#207198] px-4 py-3 text-sm outline-none"
-          placeholder="Enter username or email"/>
+          placeholder="Enter username or email" autofocus/>
         {% for field, msg in form.errors.items %}
         {% if field == "login" %}
           <div class="text-[16px] ml-3 text-[#ff0c3e]">{{ msg }}</div>
@@ -107,4 +107,9 @@
     class="absolute left-0 top-0 h-full w-[50%] rounded-3xl bg-[#313175] transition duration-700 translate-x-[101%]">
   </div>
 </div>
+<script>
+  $(document).ready(function() {
+    window.scrollTo(0, 50);
+  });
+</script>
 {% endblock %}
