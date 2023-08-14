@@ -465,12 +465,43 @@ td input{
   display: inline-block;
   opacity: 0;
   transform: translateY(100%);
-  animation: revealLetter 1.75s forwards;
+  animation: revealLetter .1s forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.sitename{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: revealSiteName .1s forwards;
   animation-delay: calc(0.1s * var(--i));
 }
 
 @keyframes revealLetter {
   to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealSiteName {
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    opacity: 1;
+    transform: translateY(-5%);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
