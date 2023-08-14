@@ -260,7 +260,24 @@ $(window).on("scroll", function() {
       }
     }
   }
+
+  //showtime
+  var challenge = $("#challeng-img");
+  var windowHeight = window.innerHeight;
+  var elementTop = challenge.getBoundingClientRect().top;
+  var elementVisible = 150;
   
+  if (elementTop < windowHeight - elementVisible) {
+    challenge.classList.add("showtime-1");
+    $("#challenge-text-1").addClass("showtime-1_1");
+    $("#challenge-text-2").addClass("showtime-1_2");
+    $("#challenge-text-3").addClass("showtime-1_3");
+  } else {
+    challenge.classList.remove("showtime-1");
+    $("#challenge-text-1").removeClass("showtime-1_1");
+    $("#challenge-text-2").removeClass("showtime-1_2");
+    $("#challenge-text-3").removeClass("showtime-1_3");
+  }
 });
 
 // go to top
