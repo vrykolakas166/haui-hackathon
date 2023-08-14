@@ -435,14 +435,14 @@ td input{
   transform: translateY(100px);
   opacity: 0;
 }
-.showtime-1_1{
+#challenge-text-1.showtime-1_1{
   transform: translateX(0);
   opacity: 1;
 }
-.showtime-1_2{
+#challenge-text-2.showtime-1_2{
   opacity: 1;
 }
-.showtime-1_3{
+#challenge-text-3.showtime-1_3{
   transform: translateY(0);
   opacity: 1;
 }
