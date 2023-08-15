@@ -473,7 +473,7 @@ td input{
   display: inline-block;
   opacity: 0;
   transform: translateY(-100%);
-  animation: revealSiteName .1s forwards;
+  animation: revealSiteName .25s forwards;
   animation-delay: calc(0.1s * var(--i));
 }
 
@@ -491,7 +491,7 @@ td input{
   }
   75% {
     opacity: 1;
-    transform: translateY(-10%);
+    transform: translateY(-30%);
   }
   90% {
     opacity: 1;
@@ -499,7 +499,7 @@ td input{
   }
   95% {
     opacity: 1;
-    transform: translateY(-5%);
+    transform: translateY(-10%);
   }
   100% {
     opacity: 1;
