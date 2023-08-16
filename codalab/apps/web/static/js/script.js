@@ -139,7 +139,7 @@ $(window).on("scroll", function() {
       if($("#toTop").hasClass("hidden")){
           $("#toTop").removeClass("hidden");
       }
-      if(window.scrollY >= limit - window.innerHeight - 30){
+      if(window.scrollY >= limit - window.innerHeight + 30){
           if($("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
               $("#toTop").removeClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
           }
