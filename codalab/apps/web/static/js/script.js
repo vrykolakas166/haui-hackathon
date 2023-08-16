@@ -131,29 +131,17 @@ var limit = Math.max( document.body.scrollHeight, document.body.offsetHeight,
 // Scroll event
 $(window).on("scroll", function() {
   if(window.scrollY < 234){
-      if(!$("#toTop").hasClass("hidden")){
-          $("#toTop").addClass("hidden");
-      }
+      $("#toTop").addClass("hidden");
   }
   else{
-      if($("#toTop").hasClass("hidden")){
-          $("#toTop").removeClass("hidden");
-      }
-      if(window.scrollY >= limit - window.innerHeight + 30){
-          if($("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
-              $("#toTop").removeClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
-          }
-          if(!$("#toTop").hasClass("bg-[#111160]")){
-              $("#toTop").addClass("bg-[#111160]");
-          }
+      $("#toTop").removeClass("hidden");
+      if(window.scrollY >= limit - window.innerHeight - 80){ //estimate footer scrollY: 80px
+          $("#toTop").removeClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
+          $("#toTop").addClass("bg-[#111160]");
       }
       else{
-          if(!$("#toTop").hasClass("bg-gradient-to-r from-[#9affff] to-[#478eee]")){
-              $("#toTop").addClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
-          }
-          if($("#toTop").hasClass("bg-[#111160]")){
-              $("#toTop").removeClass("bg-[#111160]");
-          }
+          $("#toTop").addClass("bg-gradient-to-r from-[#9affff] to-[#478eee]");
+          $("#toTop").removeClass("bg-[#111160]");
       }
   }
 });
