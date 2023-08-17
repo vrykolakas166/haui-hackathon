@@ -601,8 +601,8 @@ video {
 .-inset-1 {
   inset: -0.25rem;
 }
-.bottom-\[100px\] {
-  bottom: 100px;
+.bottom-\[50px\] {
+  bottom: 50px;
 }
 .end-1 {
   inset-inline-end: 0.25rem;
@@ -616,8 +616,8 @@ video {
 .right-8 {
   right: 2rem;
 }
-.right-\[100px\] {
-  right: 100px;
+.right-\[50px\] {
+  right: 50px;
 }
 .top-0 {
   top: 0px;

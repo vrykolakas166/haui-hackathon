@@ -454,3 +454,55 @@ td input{
   transform: translateY(0);
   opacity: 1;
 }
+
+.letter-container {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.animated_letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(100%);
+  animation: revealLetter .1s forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+.sitename{
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-100%);
+  animation: revealSiteName .25s forwards;
+  animation-delay: calc(0.1s * var(--i));
+}
+
+@keyframes revealLetter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes revealSiteName {
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  75% {
+    opacity: 1;
+    transform: translateY(-30%);
+  }
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  95% {
+    opacity: 1;
+    transform: translateY(-10%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

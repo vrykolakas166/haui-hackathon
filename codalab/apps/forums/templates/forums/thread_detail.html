@@ -1,5 +1,7 @@
 {% extends "forums/base_forum.html" %}
 
+{% load static %}
+
 {% block content %}
     <div class="col-span-10 w-[99%] min-h-[100vh] flex flex-col gap-7 items-center pb-16">
         {% for post in ordered_posts %}
@@ -7,7 +9,7 @@
                 <div class="w-full bg-[#313175] thread-nohover flex flex-col gap-7">
                     <div class="flex items-center justify-between">
                         <div class="flex gap-4 items-center">
-                            <img src="https://picsum.photos/id/30/800/800" alt="" class="w-[40px] rounded-full"/>
+                            <img style="border: 2px solid white;" src="{% static "img/icon_mini_avatar.png" %}" alt="" class="w-[40px] rounded-full"/>
                             <div>
                                 <div class="text-[13px]">{{ post.posted_by }}</div>
                                 <div class="text-[10px] text-[#808080]">{{ post.date_created }}</div>
@@ -51,7 +53,7 @@
                 <div class="w-full bg-[#313175] thread-nohover flex flex-col gap-7">
                     <div class="flex items-center justify-between">
                         <div class="flex gap-4 items-center">
-                            <img src="https://picsum.photos/id/153/800/800" alt="" class="w-[40px] rounded-full"/>
+                            <img style="border: 2px solid white;" src="{% static "img/icon_mini_avatar.png" %}" alt="" class="w-[40px] rounded-full"/>
                             <div>
                                 <div class="text-[13px]">{{ post.posted_by }}</div>
                                 <div class="text-[10px] text-[#808080]">{{ post.date_created }}</div>

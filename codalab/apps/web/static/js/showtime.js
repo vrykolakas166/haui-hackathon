@@ -1,5 +1,6 @@
 ////What do others say section
 const insideElementsContainer = document.querySelector('.in-elements');
+let messageTitle = "";
 
 // Simulate fetching data from the server (you would replace this with your actual data)
 const numberOfElements = 10; // Change this based on data
@@ -115,7 +116,7 @@ setInterval(focusNextElement, delay);
 $(window).on("scroll", function() {
     //// showtime
     // Challenge
-    var challenge = document.getElementById("challeng-img");
+    var challenge = document.getElementById("challenge-img");
     var windowHeight = window.innerHeight;
     var elementTop = challenge.getBoundingClientRect().top;
     var elementVisible = 150;
@@ -155,5 +156,29 @@ $(window).on("scroll", function() {
         $("#milestone_5").removeClass("translate-y-[-75px] opacity-100 showtime-element");
         $("#milestone_6").removeClass("translate-y-[90px] opacity-100 showtime-element");
         $("#milestone_7").removeClass("translate-y-[-110px] opacity-100 showtime-element");
+    }
+
+    // What others say show same time with milestone
+    const letterContainer = document.querySelector(".letter-container");
+    if (elementTop < windowHeight - elementVisible) {
+        if(messageTitle === ""){
+            messageTitle = "What others say about";
+            let i = 1;
+            for (const char of messageTitle) {
+                const letterSpan = document.createElement("span");
+                letterSpan.classList.add("animated_letter");
+                letterSpan.style = `--i: ${i};`;
+                letterSpan.textContent = char === " " ? "\u00A0" : char;
+                letterContainer.appendChild(letterSpan);
+                i++;
+            }
+            const objSpanPa = document.createElement("div");
+            objSpanPa.innerHTML = `<span style="--i: ${i};" class="sitename sr-only sm:not-sr-only">\u00A0HaUI Hackathon</span>`;
+            var objSpan = objSpanPa.firstChild;
+            letterContainer.appendChild(objSpan);
+        }
+    } else {
+        messageTitle = "";
+        letterContainer.innerHTML = "";
     }
 });
