@@ -1,4 +1,4 @@
-version: '2'
+version: "2"
 services:
   # --------------------------------------------------------------------------
   # HTTP Server
@@ -22,7 +22,6 @@ services:
         max-size: "200k"
     container_name: nginx
 
-
   # --------------------------------------------------------------------------
   # Database
   # --------------------------------------------------------------------------
@@ -42,7 +41,6 @@ services:
       options:
         max-size: "200k"
     container_name: postgres
-
 
   # --------------------------------------------------------------------------
   # Message queue
@@ -97,7 +95,6 @@ services:
         max-size: "200k"
     container_name: flower
 
-
   # --------------------------------------------------------------------------
   # Cache
   # --------------------------------------------------------------------------
@@ -109,7 +106,6 @@ services:
       options:
         max-size: "200k"
     container_name: memcached
-
 
   # --------------------------------------------------------------------------
   # Django
@@ -140,7 +136,6 @@ services:
       options:
         max-size: "200k"
     container_name: django
-    
 
   # --------------------------------------------------------------------------
   # Celery Workers
@@ -166,10 +161,11 @@ services:
       options:
         max-size: "200k"
     container_name: worker_site
-      
+
   worker_compute:
-    image: codalab/competitions-v1-compute-worker:1.1.7
+    image: worker_computer_v2 #codalab/competitions-v1-compute-worker:1.1.7
     privileged: true
+    pull_policy: if_not_present
     volumes:
       - ${LOGGING_DIR}/worker_compute:/var/log/
       - ${SUBMISSION_TEMP_DIR}:${SUBMISSION_TEMP_DIR}
