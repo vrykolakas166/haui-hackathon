@@ -9,12 +9,12 @@ const names = [
   "Nguyễn Bảo Hiển",
   "Trần Huy Tuấn",
   "Hoàng Ngọc Thạch",
-  "Hồ Hữu Thống",
+  "Danyl Barrack",
   "Nguyễn Xuân Hãn",
-  "Trương Hải Bằng",
-  "Thái Vương Việt",
+  "Liko Phomvihane",
+  "Phạm Vương Việt",
   "Phan Việt An",
-  "Bành Gia Vinh",
+  "Keowynn Phaophanit",
 ]; // 10 fake names for data
 const contents = [
   "The prospect of participating in this event ignited a rush of excitement within me, fueling my determination to unveil my talents and originality. Despite the jitters, the chance to challenge myself spurred me onward.",
@@ -34,7 +34,7 @@ const elements = [];
 // Create and append the inelement elements
 for (let i = 0; i < numberOfElements; i++) {
   var inelementString = `<div class="inelement flex items-start justify-center w-[90%] gap-4">
-                                <img src="/static/img/icon_mini_avatar.png" alt="" width="100" class="rounded-lg shadow-md">
+                                <img src="/static/img/icon_mini_avatar.png" alt="" width="100" class="rounded-lg shadow-md border">
                                 <div>
                                     <div class="font-semibold text-[18px]">${names[i]}</div>
                                     <div class="text-[16px]">${contents[i]}</div>
