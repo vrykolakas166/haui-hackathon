@@ -13,7 +13,7 @@
 
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link type="image/x-icon" rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+    <link type="image/x-icon" rel="shortcut icon" href="{% static " img/favicon.ico" %}">
     {% block meta %}
     {% endblock %}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,11 +22,11 @@
     <title>HaUI - {% block head_title %}{% endblock %}</title>
 
     {% block css %}
-    
+
     <!-- Included CSS Files (Compressed) -->
-    <link rel="stylesheet" href="{% static "css/jquery.dataTables.css" %}">
-    <link rel="stylesheet" href="{% static "css/jquery-editable.css" %}">
-    <link rel="stylesheet" href="{% static "js/vendor/select2/select2.css" %}" />
+    <link rel="stylesheet" href="{% static " css/jquery.dataTables.css" %}">
+    <link rel="stylesheet" href="{% static " css/jquery-editable.css" %}">
+    <link rel="stylesheet" href="{% static " js/vendor/select2/select2.css" %}" />
     <!-- {% if compile_less %}
     <link rel="stylesheet" type="text/css" href="{% static "css/imports.css" %}">
     {% else %}
@@ -37,16 +37,16 @@
     {% endif %} -->
 
     <!-- get Glyphicon bootstrap -->
-    <link rel="stylesheet/less" type="text/css" href="{% static "bootstrap/less/glyphicons.less" %}">
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"
-            integrity="sha512-XP/yjFiZF4d9fQcMmTfP04E2N/+Z+/DliP4td0me8V9pDu45+N+jQt49uxM/OJzSuh5auQNhQTnl9lITx7tLyA=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet/less" type="text/css" href="{% static " bootstrap/less/glyphicons.less" %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/1.7.5/less.min.js"
+        integrity="sha512-XP/yjFiZF4d9fQcMmTfP04E2N/+Z+/DliP4td0me8V9pDu45+N+jQt49uxM/OJzSuh5auQNhQTnl9lITx7tLyA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.bundle.min.js"
         integrity="sha512-0qNBDZgOKlY8fVi38IMT+vFkFbRdh4jJehDR31fn3a61Vp8DoC1XSERCIW/AgVs+0xjRIuarbBBmt78v1btb3A=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="{% static "js/vendor/jquery-3.6.0.min.js" %}"></script>
-    <script src="{% static "js/vendor/custom.modernizr.js" %}"></script>
+    <script src="{% static " js/vendor/jquery-3.6.0.min.js" %}"></script>
+    <script src="{% static " js/vendor/custom.modernizr.js" %}"></script>
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,7 +63,7 @@
     {% endblock extra_scripts %}
 
     <link href="{% static 'css/compiled.css' %}" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="{% static "css/style.css" %}">
+    <link rel="stylesheet" type="text/css" href="{% static " css/style.css" %}">
     <style>
         body {
             font-family: "Nunito", sans-serif;
@@ -78,66 +78,83 @@
 <body style="background-image: url('{% static 'img/home/HomeConius.png' %}'); background-size: cover;">
     <!-- Header start -->
     <header class="text-white h-[150px] flex items-center justify-between lg:mx-20 md:mx-12 sm:mx-4 mx-2">
-        <a style="text-decoration: none;" href="/" class="lg:text-[28px] md:text-[20px] sm:text-[16px] font-black text-white">Haui Hackathon</a>
+        <a style="text-decoration: none;" href="/"
+            class="lg:text-[28px] md:text-[20px] sm:text-[16px] font-black text-white">Haui Hackathon</a>
         {% block top_bar_right_menus %}
-            <div class="flex items-center justify-center lg:gap-12 md:gap-6 gap-4">
-                <a href="/" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
-                    Home
-                </a>
-                <a href="/challenge" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
-                    Challenge
-                </a>
-            </div>
+        <div class="flex items-center justify-center lg:gap-12 md:gap-6 gap-4">
+            <a href="/" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
+                Home
+            </a>
+            <a href="/challenge" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
+                Challenge
+            </a>
+        </div>
         {% endblock top_bar_right_menus %}
         <div class="relative">
             {% if user.is_authenticated %}
-                <div class="flex items-center justify-center gap-5">
-                    <a href="{% url 'user_settings' %}">
-                        <img style="border: 2px solid white;" class="w-[56px] h-[56px] rounded-full" src="{% static "img/icon_mini_avatar.png" %}" alt="{{user.username}}"/>
-                    </a>
-                    <div class="relative">
+            <div class="flex items-center justify-center gap-5">
+                <a href="{% url 'user_settings' %}">
+                    <img style="border: 2px solid white;" class="w-[56px] h-[56px] rounded-full" src="{% static "
+                        img/icon_mini_avatar.png" %}" alt="{{user.username}}" />
+                </a>
+                <div class="relative">
                     <div class="hover:cursor-pointer" onclick="toggleUserOptions()">
-                        <svg id="triangle-up" class="hidden" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 20 20"><path fill="white" d="M11.32 2.785c-.568-1.047-2.071-1.047-2.638 0l-6.5 12a1.5 1.5 0 0 0 1.32 2.213H16.5a1.5 1.5 0 0 0 1.319-2.214l-6.5-11.999Z"/></svg>
-                        <svg id="triangle-down" xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 48 48"><path fill="white" d="M27.528 40.772c-1.617 2.99-5.915 2.966-7.499-.041L4.495 11.229C3.005 8.4 5.057 5 8.255 5h31.488c3.22 0 5.27 3.44 3.739 6.272l-15.954 29.5Z"/></svg>
+                        <svg id="triangle-up" class="hidden" xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                            viewBox="0 0 20 20">
+                            <path fill="white"
+                                d="M11.32 2.785c-.568-1.047-2.071-1.047-2.638 0l-6.5 12a1.5 1.5 0 0 0 1.32 2.213H16.5a1.5 1.5 0 0 0 1.319-2.214l-6.5-11.999Z" />
+                        </svg>
+                        <svg id="triangle-down" xmlns="http://www.w3.org/2000/svg" width="10" height="10"
+                            viewBox="0 0 48 48">
+                            <path fill="white"
+                                d="M27.528 40.772c-1.617 2.99-5.915 2.966-7.499-.041L4.495 11.229C3.005 8.4 5.057 5 8.255 5h31.488c3.22 0 5.27 3.44 3.739 6.272l-15.954 29.5Z" />
+                        </svg>
                     </div>
-                        <ul id="user-options" class="absolute top-10 right-0 bg-[#313175] min-w-[130px] text-center hidden whitespace-nowrap">
-                            {% if user.is_superuser %}
-                                <a href="{% url 'admin_monitoring_links' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Admin Monitoring Links
-                                    </li>
-                                </a>
-                                <a href="{% url 'admin_competitions_manager' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Admin Competitions Manager
-                                    </li>
-                                </a>
-                                <a href="{% url 'customize_codalab' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Customize Hackathon
-                                    </li>
-                                </a>
-                                <a href="/my/">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Competitions manager
-                                    </li>
-                                </a>
-                                <a href="{% url 'su-login' %}">
-                                    <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Switch User
-                                    </li>
-                                </a>
-                                <hr/>
-                            {% endif %}
-                            <a style="text-decoration: none; color:white" href="{% url 'user_settings' %}"><li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Settings</li></a>
-                            <a style="text-decoration: none; color:white" href="/accounts/password/reset/" target="_self"><li class="py-1 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Change Password</li></a>
-                            <a style="text-decoration: none; color:white" href="{% url 'account_logout' %}" target="_self"><li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Sign Out</li></a>
-                        </ul>
-                    </div>
+                    <ul id="user-options"
+                        class="absolute top-10 right-0 bg-[#313175] min-w-[130px] text-center hidden whitespace-nowrap">
+                        {% if user.is_superuser %}
+                        <a href="{% url 'admin_monitoring_links' %}">
+                            <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Admin Monitoring Links
+                            </li>
+                        </a>
+                        <a href="{% url 'admin_competitions_manager' %}">
+                            <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Admin Competitions Manager
+                            </li>
+                        </a>
+                        <a href="{% url 'customize_codalab' %}">
+                            <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Customize Hackathon
+                            </li>
+                        </a>
+                        <a href="/my/">
+                            <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Competitions manager
+                            </li>
+                        </a>
+                        <a href="{% url 'su-login' %}">
+                            <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Switch User
+                            </li>
+                        </a>
+                        <hr />
+                        {% endif %}
+                        <a style="text-decoration: none; color:white" href="{% url 'user_settings' %}">
+                            <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Settings</li>
+                        </a>
+                        <a style="text-decoration: none; color:white" href="/accounts/password/reset/" target="_self">
+                            <li class="py-1 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Change Password</li>
+                        </a>
+                        <a style="text-decoration: none; color:white" href="{% url 'account_logout' %}" target="_self">
+                            <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Sign Out</li>
+                        </a>
+                    </ul>
                 </div>
+            </div>
             {% else %}
-                {% block button_sign_toggle %}
-                    <a style="text-decoration: none; color: white;" href="{% url 'account_login' %}?next={{request.path}}"
-                        target="_self"
-                        class="relative font-semibold bg-gradient-to-r from-[#9affff] to-[#478eee] px-8 py-3 rounded-2xl hover:shadow-[0_0_20px_2px_rgba(154,255,255,0.5)]">
-                        Sign In
-                    </a>
-                {% endblock button_sign_toggle %}
+            {% block button_sign_toggle %}
+            <a style="text-decoration: none; color: white;" href="{% url 'account_login' %}?next={{request.path}}"
+                target="_self"
+                class="relative font-semibold bg-gradient-to-r from-[#9affff] to-[#478eee] px-8 py-3 rounded-2xl hover:shadow-[0_0_20px_2px_rgba(154,255,255,0.5)]">
+                Sign In
+            </a>
+            {% endblock button_sign_toggle %}
             {% endif %}
         </div>
     </header>
@@ -152,23 +169,29 @@
     {% endblock content_wrapper %}
 
     <!-- To TOP -->
-    <div
-        id="toTop"
-        @onclick="goToTo()"
-        class="fixed right-[50px] bottom-[50px] bg-gradient-to-r from-[#9affff] to-[#478eee] rounded-full p-2 w-[50px] h-[50px] flex items-center justify-center cursor-pointer
-                hover:shadow-[0_0_50px_1px_rgba(154,255,255,0.5)] opacity-40 hover:opacity-100 hidden"
-    >
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48"><mask id="ipSUpOne0"><path fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="4" d="m12 29l12-12l12 12H12Z"/></mask><path fill="white" d="M0 0h48v48H0z" mask="url(#ipSUpOne0)"/></svg>
+    <div id="toTop" @onclick="goToTo()" class="fixed right-[50px] bottom-[50px] bg-gradient-to-r from-[#9affff] to-[#478eee] rounded-full p-2 w-[50px] h-[50px] flex items-center justify-center cursor-pointer
+                hover:shadow-[0_0_50px_1px_rgba(154,255,255,0.5)] opacity-40 hover:opacity-100 hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
+            <mask id="ipSUpOne0">
+                <path fill="#fff" stroke="#fff" stroke-linejoin="round" stroke-width="4" d="m12 29l12-12l12 12H12Z" />
+            </mask>
+            <path fill="white" d="M0 0h48v48H0z" mask="url(#ipSUpOne0)" />
+        </svg>
     </div>
 
     <!-- Footer section Start-->
-    <footer class="text-white w-full grid grid-cols-2 px-20 bg-gradient-to-r from-[#4d58ff] to-[#9affff] py-3 max-[500px]:flex max-[500px]:flex-col">
+    <footer
+        class="text-white w-full grid grid-cols-2 px-20 bg-gradient-to-r from-[#4d58ff] to-[#9affff] py-3 max-[500px]:flex max-[500px]:flex-col">
         <div class="flex flex-col justify-center">
             <div>
                 <div class="font-extrabold text-[24px] my-3">Organizer</div>
                 <div class="flex items-center justify-start gap-8 flex-wrap">
-                    <img class="w-[60px]" src="{% static "img/home/haui-logo.png" %}" alt="">
-                    <img class="w-[60px]" src="{% static "img/home/ntq-logo.jpg" %}" alt="">
+                    <a href="https://www.haui.edu.vn/">
+                        <img class="w-[40px]" src="{% static " img/home/haui-logo.png" %}" alt="">
+                    </a>
+                    <a href="https://ntq.com.vn/">
+                        <img class="h-[40px]" src="{% static " img/home/ntq-logo.jpg" %}" alt="">
+                    </a>
                 </div>
             </div>
             <!-- <div>
@@ -182,28 +205,34 @@
             <div>
                 <div class="font-extrabold text-[24px] my-3">Specialized partner</div>
                 <div class="flex items-center justify-start gap-8 flex-wrap">
-                    <img class="w-[60px]" src="{% static "img/home/bravo-logo.jpg" %}" alt="">
-                    <img class="w-[60px]" src="{% static "img/home/samsung-logo.jpg" %}" alt="">
-                    <img class="w-[60px]" src="{% static "img/home/vtiacademy-logo.jpg" %}" alt="">
+                    <a href="https://www.bravo.com.vn/">
+                        <img class="w-[40px]" src="{% static " img/home/bravo-logo.jpg" %}" alt="">
+                    </a>
+                    <a href="https://www.samsung.com/">
+                        <img class="h-[40px]" src="{% static " img/home/samsung-logo.jpg" %}" alt="">
+                    </a>
+                    <a href="https://vtiacademy.edu.vn/">
+                        <img class="h-[40px]" src="{% static " img/home/vtiacademy-logo.jpg" %}" alt="">
+                    </a>
                 </div>
             </div>
         </div>
     </footer>
     <!-- Footer section End-->
 
-    <script src="{% static "js/detectmobilebrowser.js" %}"></script>
-    <script src="{% static "js/script.js" %}"></script>
+    <script src="{% static " js/detectmobilebrowser.js" %}"></script>
+    <script src="{% static " js/script.js" %}"></script>
     <script src="{% static 'js/vendor/jquery.validate.min.1.19.3.js' %}"></script>
-    <script src="{% static "bootstrap/js/bootstrap.min.js" %}"></script>
-    <script src="{% static "js/vendor/select2/select2-forked.js" %}"></script>
-    <script src="{% static "lib/jq/jquery.cookie.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/app.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/Competition.js" %}"></script>
-    <script type="text/javascript" src="{% static "js/main.js" %}"></script>
+    <script src="{% static " bootstrap/js/bootstrap.min.js" %}"></script>
+    <script src="{% static " js/vendor/select2/select2-forked.js" %}"></script>
+    <script src="{% static " lib/jq/jquery.cookie.js" %}"></script>
+    <script type="text/javascript" src="{% static " js/app.js" %}"></script>
+    <script type="text/javascript" src="{% static " js/Competition.js" %}"></script>
+    <script type="text/javascript" src="{% static " js/main.js" %}"></script>
 
     <script type="text/javascript">
         {% block js %}
-            Competition.initialize();
+        Competition.initialize();
         {% endblock js %}
         /*
          * If we want to do huge maintenance again, can use this warning!
@@ -227,8 +256,8 @@
     {% analytical_body_bottom %}
 
     {% if GOOGLE_ANALYTICS %}
-    <link rel="stylesheet" href="{% static "css/jquery-eu-cookie-law-popup.css" %}">
-    <script src="{% static "js/vendor/jquery-eu-cookie-law-popup.js" %}"></script>
+    <link rel="stylesheet" href="{% static " css/jquery-eu-cookie-law-popup.css" %}">
+    <script src="{% static " js/vendor/jquery-eu-cookie-law-popup.js" %}"></script>
     <div class="eupopup eupopup-top"></div>
     <script type="text/javascript">
         //GOOGLE ANALYTICS SNIPPET
