@@ -94,8 +94,7 @@
             {% if user.is_authenticated %}
             <div class="flex items-center justify-center gap-5">
                 <a href="{% url 'user_settings' %}">
-                    <img style="border: 2px solid white;" class="w-[56px] h-[56px] rounded-full" src="{% static "
-                        img/icon_mini_avatar.png" %}" alt="{{user.username}}" />
+                    <img style="border: 2px solid white;" class="w-[56px] h-[56px] rounded-full" src="{% static "img/icon_mini_avatar.png" %}" alt="{{user.username}}" />
                 </a>
                 <div class="relative">
                     <div class="hover:cursor-pointer" onclick="toggleUserOptions()">
