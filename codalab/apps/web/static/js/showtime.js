@@ -76,7 +76,7 @@ function focusNextElement() {
   elements[currentIndex].classList.remove("next");
   elements[currentIndex].classList.add("active");
   // dynamic delay
-  delay = countWords(content[currentIndex]) * timePerWordMilliseconds;
+  delay = countWords(contents[currentIndex]) * timePerWordMilliseconds;
 
   // hidden and show top 3 elements
   elements.forEach((element, index) => {
@@ -130,7 +130,7 @@ elements.forEach((element, index) => {
     element.classList.add("hidden");
   }
 });
-delay = countWords(content[0]) * timePerWordMilliseconds;
+delay = countWords(contents[0]) * timePerWordMilliseconds;
 setInterval(focusNextElement, delay);
 
 // Scroll event
