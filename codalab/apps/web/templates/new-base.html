@@ -77,15 +77,15 @@
 
 <body style="background-image: url('{% static 'img/home/HomeConius.png' %}'); background-size: cover;">
     <!-- Header start -->
-    <header class="text-white h-[150px] flex items-center justify-between lg:mx-20 md:mx-12 sm:mx-4 mx-2">
+    <header class="text-white h-[100px] flex items-center justify-between lg:mx-20 md:mx-12 sm:mx-4 mx-2">
         <a style="text-decoration: none;" href="/"
-            class="lg:text-[28px] md:text-[20px] sm:text-[16px] font-black text-white">Haui Hackathon</a>
+            class="text-[20px] max-[768px]:text-[16px] font-black text-white">Haui Hackathon</a>
         {% block top_bar_right_menus %}
         <div class="flex items-center justify-center lg:gap-12 md:gap-6 gap-4">
-            <a href="/" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
+            <a href="/" class="text-[16px] max-[768px]:text-[14px] font-bold relative navlinks">
                 Home
             </a>
-            <a href="/challenge" class="lg:text-[20px] md:text-[18px] sm:text-[14px] font-bold relative navlinks">
+            <a href="/challenge" class="text-[16px] max-[768px]:text-[14px] font-bold relative navlinks">
                 Challenge
             </a>
         </div>
@@ -94,7 +94,7 @@
             {% if user.is_authenticated %}
             <div class="flex items-center justify-center gap-5">
                 <a href="{% url 'user_settings' %}">
-                    <img style="border: 2px solid white;" class="w-[56px] h-[56px] rounded-full" src="{% static "img/icon_mini_avatar.png" %}" alt="{{user.username}}" />
+                    <img style="border: 2px solid white;" class="w-[50px] h-[50px] rounded-full" src="{% static "img/icon_mini_avatar.png" %}" alt="{{user.username}}" />
                 </a>
                 <div class="relative">
                     <div class="hover:cursor-pointer" onclick="toggleUserOptions()">
@@ -110,7 +110,7 @@
                         </svg>
                     </div>
                     <ul id="user-options"
-                        class="absolute top-10 right-0 bg-[#313175] min-w-[130px] text-center hidden whitespace-nowrap">
+                        class="absolute top-10 right-0 bg-[#313175] min-w-[130px] text-center hidden whitespace-nowrap text-[14px]">
                         {% if user.is_superuser %}
                         <a href="{% url 'admin_monitoring_links' %}">
                             <li class="py-2 hover:bg-[#111160] hover:text-[#95f0ff] px-3">Admin Monitoring Links
@@ -150,7 +150,7 @@
             {% block button_sign_toggle %}
             <a style="text-decoration: none; color: white;" href="{% url 'account_login' %}?next={{request.path}}"
                 target="_self"
-                class="relative font-semibold bg-gradient-to-r from-[#9affff] to-[#478eee] px-8 py-3 rounded-2xl hover:shadow-[0_0_20px_2px_rgba(154,255,255,0.5)]">
+                class="relative font-semibold bg-gradient-to-r from-[#9affff] to-[#478eee] px-5 py-3 rounded-2xl hover:shadow-[0_0_20px_2px_rgba(154,255,255,0.5)]">
                 Sign In
             </a>
             {% endblock button_sign_toggle %}
@@ -168,7 +168,7 @@
     {% endblock content_wrapper %}
 
     <!-- To TOP -->
-    <div id="toTop" @onclick="goToTo()" class="fixed right-[50px] bottom-[50px] bg-gradient-to-r from-[#9affff] to-[#478eee] rounded-full p-2 w-[50px] h-[50px] flex items-center justify-center cursor-pointer
+    <div id="toTop" @onclick="goToTo()" class="fixed right-[20px] bottom-[20px] bg-gradient-to-r from-[#9affff] to-[#478eee] rounded-full p-2 w-[50px] h-[50px] flex items-center justify-center cursor-pointer
                 hover:shadow-[0_0_50px_1px_rgba(154,255,255,0.5)] opacity-40 hover:opacity-100 hidden">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 48 48">
             <mask id="ipSUpOne0">
@@ -181,28 +181,22 @@
     <!-- Footer section Start-->
     <footer
         class="text-white w-full grid grid-cols-2 px-20 bg-gradient-to-r from-[#4d58ff] to-[#9affff] pt-3 pb-8 max-[500px]:flex max-[500px]:flex-col">
-        <div class="flex flex-col justify-center">
+        <div class="flex flex-col">
             <div>
-                <div class="font-extrabold text-[24px] my-3">Organizer</div>
+                <div class="font-extrabold text-[18px] my-3">Organizer</div>
                 <div class="flex items-center justify-start gap-8 flex-wrap">
                     <a href="https://www.haui.edu.vn/" target="_blank">
-                        <img class="w-[40px]" src="{% static "img/home/haui-logo.png" %}" alt="">
+                        <img class="w-[46px]" src="{% static "img/home/haui-logo.png" %}" alt="">
                     </a>
                     <a href="https://ntq.com.vn/" target="_blank">
                         <img class="h-[40px]" src="{% static "img/home/ntq-logo.jpg" %}" alt="">
                     </a>
                 </div>
             </div>
-            <!-- <div>
-                <div class="font-extrabold text-[24px] my-3">Media partner</div>
-                <div class="flex items-center justify-start gap-8 flex-wrap">
-                    <img class="w-[60px]" src="{% static "img/home/haui-logo.png" %}" alt="">
-                </div>
-            </div> -->
         </div>
-        <div class="flex flex-col ">
+        <div class="flex flex-col">
             <div>
-                <div class="font-extrabold text-[24px] my-3">Specialized partner</div>
+                <div class="font-extrabold text-[18px] my-3">Specialized partner</div>
                 <div class="flex items-center justify-start gap-8 flex-wrap">
                     <a href="https://www.bravo.com.vn/" target="_blank">
                         <img class="w-[40px]" src="{% static "img/home/bravo-logo.jpg" %}" alt="">

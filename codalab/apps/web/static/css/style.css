@@ -80,7 +80,8 @@ li.active {
 .navlinks::before{
   content: '';
   position: absolute;
-  width: 70px;
+  width: 120%;
+  max-width: 60px;
   height: 4px;
   background-color: #9affff;
   border-radius: 16px;
