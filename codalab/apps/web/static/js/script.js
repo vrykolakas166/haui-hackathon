@@ -145,7 +145,7 @@ $(window).on("scroll", function() {
       }
   }
   // Control footer on scroll
-  footerChecker();
+  // footerChecker();
 });
 
 // Go to top
