@@ -159,15 +159,16 @@ $("#toTop").on("click", function () {
 
 // Control footer init
 function footerChecker(){
+  var footer = document.querySelector("footer");
   var rect = document.querySelector("footer").getBoundingClientRect();
   if(!rect) return;
   var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
   if(!(rect.bottom < 0 || rect.top - viewHeight >= 0 - rect.height)){
-    rect.style.position = "fixed";
-    rect.style.bottom = "0px";
+    footer.style.position = "fixed";
+    footer.style.bottom = "0px";
   }
   else{
-    rect.style.position = "static";
+    footer.style.position = "static";
   }
 }
 footerChecker();
