@@ -37,7 +37,7 @@ for (let i = 0; i < numberOfElements; i++) {
                                 <img src="/static/img/icon_mini_avatar.png" alt="" width="100" class="rounded-lg shadow-md border">
                                 <div>
                                     <div class="font-semibold text-[18px]">${names[i]}</div>
-                                    <div class="text-[16px]">${contents[i]}</div>
+                                    <div class="text-[14px]">${contents[i]}</div>
                                 </div>
                             </div>`;
   const inelementElement = document.createElement("div");

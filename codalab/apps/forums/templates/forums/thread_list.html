@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col gap-2">
-                        <div class="text-[24px] font-bold">{{ thread.title }}</div>
+                        <div class="text-[20px] font-bold">{{ thread.title }}</div>
                         <div 
                             onclick="window.location.href='{% url 'forum_thread_detail' forum_pk=forum.pk thread_pk=thread.pk %}'"
                             class="text-[14px] font-light truncate underline hover:cursor-pointer"
@@ -59,7 +59,7 @@
             {% endfor %}
         </div>
     {% else %}
-        <div class="col-span-10 w-full text-white text-[36px] text-center mt-10">No topics started yet, <a
+        <div class="col-span-10 w-full text-white text-[20px] text-center mt-10">No topics started yet, <a
             class="text-[#95f0ff] hover:text-[#95f0ff]" href="{% url 'forum_new_thread' forum_pk=forum.pk %}">start one
             now</a>!
         </div>
