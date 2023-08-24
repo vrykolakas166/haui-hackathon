@@ -144,6 +144,8 @@ $(window).on("scroll", function() {
           $("#toTop").removeClass("bg-[#111160]");
       }
   }
+  // Control footer on scroll
+  footerChecker();
 });
 
 // Go to top
@@ -153,3 +155,18 @@ $("#toTop").on("click", function () {
   // This strange selector seems to work universally
   $("html, body").animate({scrollTop: 0}, 500);
 });
+
+
+// Control footer init
+function footerChecker(){
+  var rect = document.querySelector("footer").getBoundingClientRect();
+  var viewHeight = Math.max(document.documentElement.clientHeight, window.innerHeight);
+  if(!(rect.bottom < 0 || rect.top - viewHeight >= 0 - rect.height)){
+    rect.style.position = "fix";
+    rect.style.bottom = "0px";
+  }
+  else{
+    rect.style.position = "relative";
+  }
+}
+footerChecker();
