@@ -191,6 +191,7 @@ $(window).on("scroll", function () {
       if(!ele) return;
       ele.removeClass("translate-y-[-75px] opacity-100 showtime-element");
       ele.next().removeClass("showtime-element opacity-100");
+      ele.next().addClass("opacity-0");
     }
   }
 
@@ -224,7 +225,7 @@ $(document).ready(function(){
   if(!milestone_points) return;
   milestone_points.forEach(mp => {
     mp.classList.add("opacity-0");
-    mp.nextElementSibling.style.animation = "flashes 1s ease infinite";
-    mp.nextElementSibling.style.animationDelay = `${mp.dataset.ind * 0.25}s`;
+    mp.nextElementSibling.firstElementChild.style.animation = "flashes 2s ease infinite";
+    mp.nextElementSibling.firstElementChild.style.animationDelay = `${mp.dataset.ind * 0.35}s`;
   })
 });
