@@ -168,13 +168,19 @@ $(window).on("scroll", function () {
       if(!ele) return;
       if(i%2==1){
         setTimeout(
-          () => ele.addClass("showtime-element translate-y-[-75px] opacity-100"),
+          () => {
+            ele.addClass("showtime-element translate-y-[-75px] opacity-100");
+            ele.next().addClass("showtime-element opacity-100");
+          },
           ele.data("ind") * 300
         );
       }
       else{
         setTimeout(
-          () => ele.addClass("showtime-element translate-y-[90px] opacity-100"),
+          () => {
+            ele.addClass("showtime-element translate-y-[90px] opacity-100")
+            ele.next().addClass("showtime-element opacity-100");
+          },
           ele.data("ind") * 300
         );
       }
@@ -184,6 +190,7 @@ $(window).on("scroll", function () {
       const ele = $(`#milestone_${i}`);
       if(!ele) return;
       ele.removeClass("translate-y-[-75px] opacity-100 showtime-element");
+      ele.next().removeClass("showtime-element opacity-100");
     }
   }
 
@@ -210,4 +217,14 @@ $(window).on("scroll", function () {
     messageTitle = "";
     letterContainer.innerHTML = "";
   }
+});
+
+$(document).ready(function(){
+  var milestone_points = document.querySelectorAll("[id^=milestone_]");
+  if(!milestone_points) return;
+  milestone_points.forEach(mp => {
+    mp.nextElementSibling().style.opacity = "0";
+    mp.nextElementSibling().style.animation = "flashes 1s ease infinite";
+    mp.nextElementSibling().style.animationDelay = `${mp.dataset.ind * 0.25}s`;
+  })
 });
