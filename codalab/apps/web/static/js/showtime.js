@@ -162,77 +162,37 @@ $(window).on("scroll", function () {
   elementVisible = 150;
 
   if (elementTop < windowHeight - elementVisible) {
-    setTimeout(
-      () =>
-        $("#milestone_1").addClass(
-          "showtime-element translate-y-[-75px] opacity-100"
-        ),
-      $("#milestone_1").data("ind") * 300
-    );
-    setTimeout(
-      () =>
-        $("#milestone_2").addClass(
-          "showtime-element translate-y-[90px] opacity-100"
-        ),
-      $("#milestone_2").data("ind") * 300
-    );
-    setTimeout(
-      () =>
-        $("#milestone_3").addClass(
-          "showtime-element translate-y-[-75px] opacity-100"
-        ),
-      $("#milestone_3").data("ind") * 300
-    );
-    setTimeout(
-      () =>
-        $("#milestone_4").addClass(
-          "showtime-element translate-y-[90px] opacity-100"
-        ),
-      $("#milestone_4").data("ind") * 300
-    );
-    setTimeout(
-      () =>
-        $("#milestone_5").addClass(
-          "showtime-element translate-y-[-75px] opacity-100"
-        ),
-      $("#milestone_5").data("ind") * 300
-    );
-    setTimeout(
-      () =>
-        $("#milestone_6").addClass(
-          "showtime-element translate-y-[90px] opacity-100"
-        ),
-      $("#milestone_6").data("ind") * 300
-    );
-    setTimeout(
-      () =>
-        $("#milestone_7").addClass(
-          "showtime-element translate-y-[-110px] opacity-100"
-        ),
-      $("#milestone_7").data("ind") * 300
-    );
+    // There are 10 milestones in index.html
+    for(let i = 1; i <= 10; i++){
+      const ele = $(`#milestone_${i}`);
+      if(!ele) return;
+      if(i%2==1){
+        setTimeout(
+          () => {
+            ele.addClass("showtime-element translate-y-[-75px] opacity-100");
+            ele.next().addClass("showtime-element opacity-100");
+          },
+          ele.data("ind") * 300
+        );
+      }
+      else{
+        setTimeout(
+          () => {
+            ele.addClass("showtime-element translate-y-[90px] opacity-100")
+            ele.next().addClass("showtime-element opacity-100");
+          },
+          ele.data("ind") * 300
+        );
+      }
+    }
   } else {
-    $("#milestone_1").removeClass(
-      "translate-y-[-75px] opacity-100 showtime-element"
-    );
-    $("#milestone_2").removeClass(
-      "translate-y-[90px] opacity-100 showtime-element"
-    );
-    $("#milestone_3").removeClass(
-      "translate-y-[-75px] opacity-100 showtime-element"
-    );
-    $("#milestone_4").removeClass(
-      "translate-y-[90px] opacity-100 showtime-element"
-    );
-    $("#milestone_5").removeClass(
-      "translate-y-[-75px] opacity-100 showtime-element"
-    );
-    $("#milestone_6").removeClass(
-      "translate-y-[90px] opacity-100 showtime-element"
-    );
-    $("#milestone_7").removeClass(
-      "translate-y-[-110px] opacity-100 showtime-element"
-    );
+    for(let i = 1; i <= 10; i++){
+      const ele = $(`#milestone_${i}`);
+      if(!ele) return;
+      ele.removeClass("translate-y-[-75px] opacity-100 showtime-element");
+      ele.next().removeClass("showtime-element opacity-100");
+      ele.next().addClass("opacity-0");
+    }
   }
 
   // What others say show same time with milestone
@@ -258,4 +218,14 @@ $(window).on("scroll", function () {
     messageTitle = "";
     letterContainer.innerHTML = "";
   }
+});
+
+$(document).ready(function(){
+  var milestone_points = document.querySelectorAll("[id^=milestone_]");
+  if(!milestone_points) return;
+  milestone_points.forEach(mp => {
+    mp.classList.add("opacity-0");
+    mp.nextElementSibling.firstElementChild.style.animation = "flashes 2s infinite alternate";
+    mp.nextElementSibling.firstElementChild.style.animationDelay = `${mp.dataset.ind * 1.25}s`;
+  })
 });
