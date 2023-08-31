@@ -225,7 +225,7 @@ $(document).ready(function(){
   if(!milestone_points) return;
   milestone_points.forEach(mp => {
     mp.classList.add("opacity-0");
-    mp.nextElementSibling.firstElementChild.style.animation = "flashes 2s ease infinite";
-    mp.nextElementSibling.firstElementChild.style.animationDelay = `${mp.dataset.ind * 0.35}s`;
+    mp.nextElementSibling.firstElementChild.style.animation = "flashes 2s infinite alternate";
+    // mp.nextElementSibling.firstElementChild.style.animationDelay = `${mp.dataset.ind * 0.35}s`;
   })
 });
