@@ -223,8 +223,8 @@ $(document).ready(function(){
   var milestone_points = document.querySelectorAll("[id^=milestone_]");
   if(!milestone_points) return;
   milestone_points.forEach(mp => {
-    mp.nextElementSibling().style.opacity = "0";
-    mp.nextElementSibling().style.animation = "flashes 1s ease infinite";
-    mp.nextElementSibling().style.animationDelay = `${mp.dataset.ind * 0.25}s`;
+    mp.nextElementSibling.style.opacity = "0";
+    mp.nextElementSibling.style.animation = "flashes 1s ease infinite";
+    mp.nextElementSibling.style.animationDelay = `${mp.dataset.ind * 0.25}s`;
   })
 });
